@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekti | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+                <li class="lang-switcher">
+                    <a href="webprojects.html">EN</a> | <a href="webprojects-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <div class="back-button">
+        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+
+
+    <section id="webprojects">
+        <h1>Web Razvoj</h1>
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/projekti/RedCap_video.mp4" class="glightbox" data-type="video">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/RedCap_video.mp4" type="video/mp4">
+                        Vaš preglednik ne podržava oznaku videa.
+                    </video>
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>RedCap – 3D animacija likova</h2>
+                <p>Ovaj projekt kombinira <b>3D dizajn, animaciju</b> i <b>razvoj front-enda</b> kako bi predstavio
+                    brend koji sam stvorila - <b>RedCap</b>.
+                    Koristeći <b>Spline</b>, oblikovala sam i prilagodila lik kako bi odgovarao identitetu brenda,
+                    dodajući prepoznatljivu <b>crvenu kapu</b>, <b>logotip koji sam dizajnirala</b> i stvarajući
+                    <b>animaciju orbite kamere</b> oko modela.
+                </p>
+                <p>Također sam <b>kodirala i razvila web stranicu</b> na kojoj je prikazana ova 3D animacija,
+                    osiguravajući da je usklađena s vizualnim i interaktivnim tonom brenda.
+                    Ovaj projekt spaja moje vještine u <b>web razvoju, dizajnu i animaciji</b> u jedan kohezivan
+                    kreativni
+                    izraz - <b>RedCap</b>.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/V&R_video.mp4" class="glightbox">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/V&R_video.mp4" type="video/mp4">
+                        Vaš preglednik ne podržava oznaku videa.
+                    </video>
+                </a>
+                <!-- Full Home Screenshot -->
+                <a href="#vr-fullpage" class="glightbox">
+                    <img src="images/projekti/V&R_thumbnail.png" alt="V&R Home Page" class="project-image">
+                </a>
+
+                <div id="vr-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/V&R_home.png" alt="V&R Home Full Page">
+                    </div>
+                </div>
+                <p class="click-text">Kliknite za pregled cijele stranice</p>
+            </div>
+            <div class="project-info">
+                <h2>V&R Cleaning – Potpuni razvoj web stranice i implementacija dizajna</h2>
+                <p>
+                    Za ovaj projekt razvila sam <b>cijelu web stranicu za V&R Cleaning</b>, malu tvrtku za čišćenje.
+                    Radila sam s <b>postojećim logotipom</b> i izvukla <b>paletu boja</b> iz njihove jedne objave na
+                    Instagramu, koja se iznenađujuće podudarala s njihovim omiljenim bojama. Dizajnirala sam izgled u
+                    <b>Figmi</b>, pripremila sav sadržaj uključujući <b>tekstove i slike</b> (s ograničenim
+                    materijalom),
+                    a zatim kodirala stranicu koristeći <b>HTML, CSS i JavaScript</b>.
+                </p>
+                <p>
+                    Kako sam napredovala, prilagodila sam projekt <b>WordPressu</b>, stvorivši <b>dinamička polja</b>
+                    kako
+                    bi klijent mogao <b>jednostavno ažurirati cijene i sadržaj</b>. To je zahtijevalo pretvaranje
+                    statičke HTML/CSS/JS strukture u <b>PHP predloške</b> kompatibilne s WordPressom. Projekt prikazuje
+                    <b>rješavanje problema,
+                        tijek rada od dizajna do koda</b>,
+                    i implementaciju <b>interaktivnih elemenata</b> uzimajući u obzir potrebe klijenta.
+                </p>
+                <p>
+                    Stranica nikada nije objavljena zbog okolnosti klijenta, ali projekt pokazuje moju sposobnost za
+                    upravljanjem
+                    <b>dizajna, razvoja i implementacije</b>, kombinirajući <b>kreativnost i tehničke vještine
+                    </b>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Full page links -->
+        <a href="#vr-usluge" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-dubinsko" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-onama" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-kontakt" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+
+        <!-- Hidden scrollable containers -->
+        <div id="vr-usluge" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_usluge.png" alt="V&R Usluge">
+            </div>
+        </div>
+        <div id="vr-dubinsko" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_dubinsko.png" alt="V&R Dubinsko">
+            </div>
+        </div>
+        <div id="vr-onama" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_onama.png" alt="V&R O Nama">
+            </div>
+        </div>
+        <div id="vr-kontakt" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_kontakt.png" alt="V&R Kontakt">
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/projekti/Kinetik_video.mp4" class="glightbox" data-type="video">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/Kinetik_video.mp4" type="video/mp4">
+                        Vaš preglednik ne podržava oznaku videa.
+                    </video>
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>Kinetik – Interaktivno web iskustvo</h2>
+                <p>Ovaj projekt pokazuje moje vještine <b>kreativnog usmjeravanja, animacije</b> i <b>front-end
+                        razvoja</b>
+                    kroz brend koji sam dizajnirala pod nazivom <b>Kinetik</b> - <b>umjetnički i ekscentrični
+                        koncept</b>
+                    usmjeren na dinamičnu vizualnu interakciju.</p>
+                <p><b>Dizajnirala sam logo</b>, <b>izgradila cijelu web stranicu od nule</b> i iskoristila ovaj projekt
+                    kao
+                    priliku za <b>eksperimentiranje s animacijama i interaktivnošću</b> u cijelom izgledu. Glavna
+                    inspiracija došla je s web stranice koju sam otkrila s <b>efektom horizontalnog pomicanja</b> - i
+                    znala sam da ga moram ponovno stvoriti na svoj način.
+                </p>
+                <p>Kinetik je postao moje osobno igralište za <b>istraživanje pokreta, kreativnog kodiranja i identiteta
+                        brenda</b> - projekt gdje sam mogla slobodno kombinirati <b>umjetnost, kod i pokret</b> u jedno
+                    kohezivno digitalno iskustvo.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/picofportfolio.png" class="glightbox">
+                    <img src="images/picofportfolio.png" alt="Portfolio Image" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>Ovaj portfolio – Moj prvi web projekt</h2>
+                <p>Započinjući svoje <b>putovanje front-end razvoja</b>, pohađala sam tečaj kako bih savladala
+                    osnove <b>HTML-a, CSS-a i JavaScripta</b>.
+                    Ubrzo nakon toga, počela sam raditi na vlastitom <b>portfoliju</b> - onom koji trenutno
+                    pregledavate - gdje sam mogala primijeniti svoje novostečene vještine.
+                </p>
+                <p>Ovaj projekt postao je <b>osobni izazov</b> i <b>kreativni ispušni ventil</b>, kombinirajući moju
+                    strast prema <b>web razvoju</b> i <b>fotografiji</b>.
+                    Ne samo da sam naučila kako <b>izraditi web stranicu od temelja</b>, već sam i pronašala način
+                    da uključim svoju ljubav prema <b>hvatanju trenutaka</b> u dizajn.
+                    Ovaj portfolio je više od obične zbirke mojih radova - to je <b>odraz onoga što jesam i što volim
+                        raditi</b>.
+                </p>
+            </div>
+        </div>
+
+
+        <h1>Web Dizajn</h1>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#arta-fullpage" class="glightbox">
+                    <img src="images/projekti/arta-teh-thumbnail.png" alt="Arta-Teh Preview" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="arta-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/arta-teh.png" alt="Arta-Teh Full Page">
+                    </div>
+                </div>
+
+                <p class="click-text">Klikni za prikaz cijele stranice</p>
+            </div>
+            <div class="project-info">
+                <h2>Arta Teh – Web Stranica Građevinske Tvrtke</h2>
+                <p>
+                    Ovaj projekt prikazuje kompletan <b>vizualni identitet i web dizajn</b> za građevinsku tvrtku
+                    <b>Arta Teh</b>. Dizajniran je <b>logo</b> i kreirana <b>moderna, profesionalna one-page web
+                        stranica</b>
+                    koja odražava pouzdanost, preciznost i estetske vrijednosti tvrtke.
+                </p>
+                <p>
+                    Dizajn je u potpunosti razvijen u <b>Figmi</b>, s fokusom na čist raspored, snažne geometrijske
+                    elemente
+                    i vizualnu hijerarhiju koja ističe usluge i projekte tvrtke. Svaka sekcija — od hero područja do
+                    kontakt forme — pažljivo je strukturirana kako bi se kroz <b>boje, tipografiju i kompoziciju</b>
+                    komunicirala pouzdanost i profesionalnost.
+                </p>
+                <p>
+                    Projekt predstavlja kombinaciju mojih vještina u <b>dizajnu brenda, kompoziciji rasporeda i
+                        korisničkom
+                        iskustvu</b>, rezultirajući koherentnim digitalnim identitetom za <b>Arta Teh</b>.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#whats-fullpage" class="glightbox">
+                    <img src="images/projekti/whats-next-thumbnail.png" alt="Whats-Next Preview" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="whats-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/whats-next.png" alt="Whats-Next Full Page">
+                    </div>
+                </div>
+
+                <p class="click-text">Klikni za prikaz cijele stranice</p>
+            </div>
+            <div class="project-info">
+                <h2>What's Next – Koncept Brendinga i Web Dizajna</h2>
+                <p>
+                    Tijekom <b>prakse u Španjolskoj</b>, radila sam na <b>logu i web dizajnu</b> za <b>What’s Next</b>,
+                    tvrtku fokusiranu na partije i evente. Cilj je bio stvoriti <b>moderan i energičan izgled</b> koji
+                    privlači mladu i živahnu publiku.
+                </p>
+                <p>
+                    <b>Logo sadrži strelicu usmjerenu naprijed</b>, simbolizirajući napredak, pokret i uzbuđenje, što se
+                    savršeno uklapa u zabavan i dinamičan identitet brenda. <b>Web dizajn</b>, izrađen u
+                    <b>Figmi</b>, koristi podebljanu tipografiju, živopisne boje i razigrane geometrijske elemente kako
+                    bi
+                    vodio korisnike kroz sadržaj i istovremeno održavao svjež i angažiran dojam.
+                </p>
+                <p>
+                    Projekt pokazuje kako <b>koherentan vizualni identitet</b> — od loga do web stranice — može
+                    učinkovito prenijeti duh brenda i privući ciljanu publiku.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#vr-fullpage" class="glightbox">
+                    <img src="images/projekti/vr-thumb.png" alt="V&R Pregled" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="vr-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/vr.png" alt="V&R Cijela Stranica">
+                    </div>
+                </div>
+
+                <p class="click-text">Klikni za prikaz cijele stranice</p>
+            </div>
+            <div class="project-info">
+                <h2>V&R Cleaning – Koncept Web Dizajna</h2>
+                <p>
+                    Dizajnirala sam <b> cijelu stranicu</b> za <b>V&R Cleaning Service</b> u <b>Figmi</b>, s ciljem
+                    stvaranja
+                    modernog i profesionalnog izgleda koji jasno prikazuje njihove usluge čišćenja.
+                    <i>Napomena: cijela web stranica prikazana je zasebno u dijelu Web Razvoj; ovdje je Figma dizajn
+                        početne stranice.</i>
+                </p>
+                <p>
+                    Dizajn koristi <b>čist raspored, jasnu tipografiju i njihove najdraže boje</b> kako bi stranica bila
+                    pregledna
+                    i ugodna za korištenje, ističući ključne usluge i poziv na akciju.
+                </p>
+                <p>
+                    Ovaj projekt pokazuje kako <b>koherentan web dizajn</b> može učinkovito predstaviti brend i njegove
+                    usluge.
+                </p>
+            </div>
+        </div>
+
+
+        <h1>Promotivni Materijali</h1>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/vizitka-redcap-front.png" class="glightbox">
+                    <img src="images/projekti/vizitka-redcap-front.png" alt="RedCap Vizitka Sprijeda"
+                        class="project-image">
+                </a>
+                <a href="images/projekti/vizitka-redcap-back.png" class="glightbox">
+                    <img src="images/projekti/vizitka-redcap-back.png" alt="RedCap Vizitka Straga"
+                        class="project-image">
+                </a>
+                <a href="images/projekti/redcap-bag.png" class="glightbox">
+                    <img src="images/projekti/redcap-bag.png" alt="RedCap Torba" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>RedCap – Promotivni Materijali</h2>
+                <p>
+                    Ovaj projekt prikazuje dio <b>RedCap vizualnog identiteta</b>, uključujući <b>vizitke i torbe s
+                        logom</b>.
+                    Koncept se oslanja na prepoznatljivi <b>simbol crvene kape</b> — minimalistički, ali upečatljiv
+                    element koji odražava kreativnost, samopouzdanje i individualnost.
+                </p>
+                <p>
+                    Materijali su dizajnirani da budu <b>čisti, moderni i koherentni</b>, zadržavajući isti vizualni ton
+                    koji se koristi kroz RedCap brend — kombinirajući fotografiju, dizajn i storytelling u jedinstven
+                    identitet.
+                </p>
+                <p>
+                    Ovi dizajni pokazuju kako <b>vizualna dosljednost</b> i <b>pažnja prema detaljima</b> mogu ojačati
+                    prisutnost brenda u fizičkim i digitalnim formatima.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/vizitka-arta-front.png" class="glightbox">
+                    <img src="images/projekti/vizitka-arta-front.png" alt="Arta-Teh Vizitka Sprijeda"
+                        class="project-image">
+                </a>
+                <a href="images/projekti/vizitka-arta-back.png" class="glightbox">
+                    <img src="images/projekti/vizitka-arta-back.png" alt="Arta-Teh Vizitka Straga"
+                        class="project-image">
+                </a>
+                <a href="images/projekti/arta-shirt.png" class="glightbox">
+                    <img src="images/projekti/arta-shirt.png" alt="Arta-Teh Majica" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>Arta Teh – Promotivni Materijali</h2>
+                <p>
+                    Ovaj dio projekta prikazuje <b>primjenu brenda Arta Teh</b>, uključujući <b>vizitke i dizajn
+                        majice</b>.
+                    Nadovezuje se na već uspostavljeni vizualni identitet, održavajući <b>profesionalnu, strukturiranu i
+                        modernu</b> estetiku koja je u skladu s glavnim web dizajnom tvrtke.
+                </p>
+                <p>
+                    Dizajn slijedi istu <b>paletu boja i tipografiju</b> korištenu kroz brend kako bi se stvorio
+                    ujednačen izgled koji odražava pouzdanost i preciznost — ključne vrijednosti Arta Teh-a.
+                </p>
+                <p>
+                    Ovi materijali pokazuju kako se <b>dosljednost brenda</b> može prenijeti u tiskane i odjevne
+                    formate, jačajući koherentan i prepoznatljiv korporativni identitet.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
+        <p>Kontaktirajte me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const currentPage = window.location.pathname.split("/").pop();
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            openEffect: 'fade',
+            closeEffect: 'fade',
+            touchNavigation: true,
+            loop: true,
+            height: '90vh', // do 90% visine ekrana
+            width: '1600px', // širina laptopa, prilagodljivo
+            moreLength: 8000 // opcionalno, za duže slike
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="lang-switcher">
+                    <a href="contact.html">EN</a> | <a href="contact-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <div class="back-button">
+        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+    <section id="contact">
+        <h1>Let’s Build Great Digital Experiences Together!</h1>
+        <p>I’m eager to contribute to a team where I can:</p>
+        <ul>
+            <li><b>Create visually compelling web designs</b> that combine aesthetics, usability, and brand identity
+            <li><b>Design and develop responsive websites</b> using WordPress and/or front-end technologies (HTML,
+                CSS,
+                JavaScript, React)</li>
+            </li>
+            <li><b>Produce engaging digital content</b> including graphics, layouts, and animations</li>
+            <li><b>Integrate original photography and drone visuals</b> to enhance digital projects, including on-site photos or drone footage if needed</li>
+            <li><b>Collaborate with teams</b> to deliver polished, user-friendly websites and digital products</li>
+        </ul>
+        <p>I’m enthusiastic about joining a creative and innovative environment where I can grow professionally while
+            contributing my skills to meaningful projects. <br><b>I’m ready to help bring your team’s ideas to life.</b>
+        </p>
+        <p>Feel free to reach me via email: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <h2>Excited to create something amazing together! 😊</h2>
+    </section>
+
+
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | All Rights Reserved | Website Development: Lucija Babić</p>
+        <p>Contact me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        // Dohvati sve linkove iz navigacije
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Dohvati trenutni URL i izdvoji samo ime datoteke (npr. "about.html")
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Prođi kroz svaki link i provjeri odgovara li trenutnoj stranici
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

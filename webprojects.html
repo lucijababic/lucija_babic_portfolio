@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="lang-switcher">
+                    <a href="webprojects.html">EN</a> | <a href="webprojects-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <div class="back-button">
+        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+
+
+    <section id="webprojects">
+        <h1>Web Development</h1>
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/projekti/RedCap_video.mp4" class="glightbox" data-type="video">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/RedCap_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>RedCap – 3D Character Animation</h2>
+                <p>This project combines <b>3D design, animation</b> and <b>front-end development</b> to represent a
+                    brand I created – <b>RedCap</b>.
+                    Using <b>Spline</b>, I shaped and customized the character to match the brand’s identity,
+                    adding the signature <b>red hat</b>, the <b>logo I designed</b>, and creating a <b>camera orbit
+                        animation</b> around the model.
+                </p>
+                <p>I also <b>coded and developed the website</b> where this 3D animation is showcased, ensuring it
+                    aligns with the visual and interactive tone of my brand.
+                    This project merges my skills in <b>web development, design, and motion</b> into one cohesive
+                    creative expression – <b>RedCap</b>.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/V&R_video.mp4" class="glightbox">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/V&R_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <!-- Full Home Screenshot -->
+                <a href="#vr-fullpage" class="glightbox">
+                    <img src="images/projekti/V&R_thumbnail.png" alt="V&R Home Page" class="project-image">
+                </a>
+
+                <div id="vr-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/V&R_home.png" alt="V&R Home Full Page">
+                    </div>
+                </div>
+                <p class="click-text">Click to view full page</p>
+            </div>
+            <div class="project-info">
+                <h2>V&R Cleaning – Full Website Development & Design Implementation</h2>
+                <p>
+                    For this project, I developed the <b>entire website for V&R Cleaning</b>, a small cleaning company.
+                    I worked with the <b>existing logo</b> and extracted a <b>color palette</b> from their single
+                    Instagram post,
+                    which surprisingly matched their favorite colors. I designed the layout in <b>Figma</b>, prepared
+                    all content
+                    including <b>texts and images</b> (with limited material provided), and then coded the site using
+                    <b>HTML, CSS, and JavaScript</b>.
+                </p>
+                <p>
+                    As I progressed, I adapted the project to <b>WordPress</b>, creating <b>dynamic fields</b> so the
+                    client could
+                    <b>easily update prices and content</b>. This required converting the static HTML/CSS/JS structure
+                    into
+                    <b>PHP templates</b> compatible with WordPress. The project showcases <b>problem-solving,
+                        design-to-code workflow</b>,
+                    and implementing <b>interactive elements</b> while keeping the client’s needs in mind.
+                </p>
+                <p>
+                    The site was never published due to client circumstances, but the project demonstrates my ability to
+                    manage
+                    <b>design, development, and deployment workflow</b>, combining <b>creativity and technical
+                        skills</b>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Full page links -->
+        <a href="#vr-usluge" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-dubinsko" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-onama" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+        <a href="#vr-kontakt" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+
+        <!-- Hidden scrollable containers -->
+        <div id="vr-usluge" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_usluge.png" alt="V&R Usluge">
+            </div>
+        </div>
+        <div id="vr-dubinsko" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_dubinsko.png" alt="V&R Dubinsko">
+            </div>
+        </div>
+        <div id="vr-onama" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_onama.png" alt="V&R O Nama">
+            </div>
+        </div>
+        <div id="vr-kontakt" style="display:none;">
+            <div class="scroll-container">
+                <img src="images/projekti/V&R_kontakt.png" alt="V&R Kontakt">
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/projekti/Kinetik_video.mp4" class="glightbox" data-type="video">
+                    <video autoplay loop muted playsinline class="project-image">
+                        <source src="images/projekti/Kinetik_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>Kinetik – Interactive Web Experience</h2>
+                <p>This project showcases my <b>creative direction, animation</b> and <b>front-end development</b>
+                    skills through a
+                    brand I designed called <b>Kinetik</b> - an <b>artsy and eccentric concept</b> focused on dynamic
+                    visual
+                    interaction.</p>
+                <p>I <b>designed the logo</b>, <b>built the entire website from scratch</b>, and used this project as an
+                    opportunity to
+                    <b>experiment with animations and interactivity</b> across the layout. The main inspiration came
+                    from a website I
+                    discovered featuring a <b>horizontal scroll effect</b> - and I knew I had to recreate it in my own
+                    way.
+                </p>
+                <p>Kinetik became my personal playground for <b>exploring motion, creative coding, and brand
+                        identity</b> - a project
+                    where I could freely combine <b>art, code, and movement</b> into one cohesive digital experience.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro">
+                <a href="images/picofportfolio.png" class="glightbox">
+                    <img src="images/picofportfolio.png" alt="Portfolio Image" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>This Portfolio – My First Web Project</h2>
+                <p>Embarking on my <b>front-end development journey</b>, I took a course to master the fundamentals of
+                    <b>HTML, CSS, and JavaScript</b>.
+                    Shortly after, I began working on my very own <b>portfolio</b> – the one you’re currently viewing –
+                    where I could apply my newfound skills.
+                </p>
+                <p>This project became a <b>personal challenge</b> and a <b>creative outlet</b>, combining both my
+                    passion for <b>web development</b> and <b>photography</b>.
+                    Not only did I learn how to <b>build a website from the ground up</b>, but I also found a way to
+                    incorporate my love for <b>capturing moments</b> into the design.
+                    This portfolio is more than just a collection of my work – it’s a <b>reflection of who I am and what
+                        I love to do</b>.
+                </p>
+            </div>
+        </div>
+
+        <h1>Web Design</h1>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#arta-fullpage" class="glightbox">
+                    <img src="images/projekti/arta-teh-thumbnail.png" alt="Arta-Teh Preview" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="arta-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/arta-teh.png" alt="Arta-Teh Full Page">
+                    </div>
+                </div>
+
+                <p class="click-text">Click to view full page</p>
+            </div>
+            <div class="project-info">
+                <h2>Arta Teh – Construction Company Website</h2>
+                <p>
+                    This project showcases the complete <b>visual identity and web design</b> for the construction
+                    company <b>Arta Teh</b>.
+                    I designed the <b>logo</b> and created a <b>modern, professional one-page website</b> that reflects
+                    the company’s reliability, precision, and aesthetic values.
+                </p>
+                <p>
+                    The design was fully developed in <b>Figma</b>, focusing on a clean layout, strong geometric
+                    elements, and visual hierarchy that highlights the company’s services and projects.
+                    Each section — from the hero area to the contact form — was carefully structured to communicate
+                    trust and professionalism through <b>color, typography, and composition</b>.
+                </p>
+                <p>
+                    This project represents a combination of my skills in <b>brand design, layout composition, and user
+                        experience</b>, resulting in a coherent digital identity for <b>Arta Teh</b>.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#whats-fullpage" class="glightbox">
+                    <img src="images/projekti/whats-next-thumbnail.png" alt="Whats-Next Preview" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="whats-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/whats-next.png" alt="Whats-Next Full Page">
+                    </div>
+                </div>
+
+                <p class="click-text">Click to view full page</p>
+            </div>
+            <div class="project-info">
+                <h2>What's Next – Branding & Web Design Concept</h2>
+                <p>
+                    During an <b>internship in Spain</b>, I worked on the <b>logo and website design</b> for <b>What’s
+                        Next</b>,
+                    a company focused on parties and events. The goal was to create a <b>modern, energetic look</b> that
+                    appeals to a young, lively audience.
+                </p>
+                <p>
+                    The <b>logo features a forward-pointing arrow</b>, symbolizing progress, movement, and excitement,
+                    which
+                    aligns with the brand’s fun and dynamic identity. The <b>website design</b>, created in
+                    <b>Figma</b>, uses
+                    bold typography, vibrant colors, and playful geometric elements to guide users through the content
+                    while
+                    keeping the overall feel fresh and engaging.
+                </p>
+                <p>
+                    This project demonstrates how a <b>cohesive visual identity</b>—from logo to website—can capture the
+                    spirit of a brand and attract its target audience effectively.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <!-- Thumbnail koji otvara lightbox -->
+                <a href="#vr-fullpage" class="glightbox">
+                    <img src="images/projekti/vr-thumb.png" alt="V&R Preview" class="project-image">
+                </a>
+
+                <!-- Skriveni sadržaj koji se otvara u lightboxu -->
+                <div id="vr-fullpage" style="display:none;">
+                    <div class="scroll-container">
+                        <img src="images/projekti/vr.png" alt="V&R Full Page">
+                    </div>
+                </div>
+
+                <p class="click-text">Click to view full page</p>
+            </div>
+            <div class="project-info">
+                <h2>V&R Cleaning – Web Design Concept</h2>
+                <p>
+                    I designed the <b>whole page</b> for <b>V&R Cleaning Service</b> in <b>Figma</b>, aiming for a
+                    modern
+                    and professional look that clearly showcases their cleaning services.
+                    <i>Note: the full website is shown separately in Web Development; here is the Figma design for the
+                        home page.</i>
+                </p>
+                <p>
+                    The design features a <b>clean layout, clear typography, and colors they loved</b> to keep the page
+                    visually appealing and user-friendly, highlighting key services and calls to action.
+                </p>
+                <p>
+                    This project demonstrates how a <b>cohesive web design</b> can effectively represent a brand and its
+                    services.
+                </p>
+            </div>
+        </div>
+
+        <h1>Brand Collateral</h1>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/vizitka-redcap-front.png" class="glightbox">
+                    <img src="images/projekti/vizitka-redcap-front.png" alt="Portfolio Image" class="project-image">
+                </a>
+                <a href="images/projekti/vizitka-redcap-back.png" class="glightbox">
+                    <img src="images/projekti/vizitka-redcap-back.png" alt="Portfolio Image" class="project-image">
+                </a>
+                <a href="images/projekti/redcap-bag.png" class="glightbox">
+                    <img src="images/projekti/redcap-bag.png" alt="Portfolio Image" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>RedCap – Brand Collateral</h2>
+                <p>
+                    This project presents part of the <b>RedCap visual identity</b>, including <b>business cards and
+                        branded tote bags</b>.
+                    The concept builds on the recognizable <b>red cap symbol</b> - a minimal yet bold element that
+                    reflects creativity, confidence, and individuality.
+                </p>
+                <p>
+                    The materials are designed to be <b>clean, modern, and cohesive</b>, maintaining the same visual
+                    tone used across the RedCap brand - combining photography, design, and storytelling into one
+                    identity.
+                </p>
+                <p>
+                    These designs showcase how <b>visual consistency</b> and <b>attention to detail</b> can strengthen a
+                    brand’s presence across physical and digital formats.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="intro vr-intro">
+                <a href="images/projekti/vizitka-arta-front.png" class="glightbox">
+                    <img src="images/projekti/vizitka-arta-front.png" alt="Portfolio Image" class="project-image">
+                </a>
+                <a href="images/projekti/vizitka-arta-back.png" class="glightbox">
+                    <img src="images/projekti/vizitka-arta-back.png" alt="Portfolio Image" class="project-image">
+                </a>
+                <a href="images/projekti/arta-shirt.png" class="glightbox">
+                    <img src="images/projekti/arta-shirt.png" alt="Portfolio Image" class="project-image">
+                </a>
+            </div>
+            <div class="project-info">
+                <h2>Arta Teh – Brand Collateral</h2>
+                <p>
+                    This part of the project shows the <b>Arta Teh brand applications</b>, including <b>business cards
+                        and T-shirt design</b>.
+                    It extends the already established visual identity, maintaining a <b>professional, structured, and
+                        modern</b> aesthetic consistent with their main website design.
+                </p>
+                <p>
+                    The design follows the same <b>color palette and typography</b> used across the brand to create a
+                    unified look that represents reliability and precision - key values of Arta Teh.
+                </p>
+                <p>
+                    These materials demonstrate how <b>brand consistency</b> can be translated into print and apparel,
+                    reinforcing a cohesive and recognizable corporate image.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | All Rights Reserved | Website Development: Lucija Babić</p>
+        <p>Contact me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const currentPage = window.location.pathname.split("/").pop();
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            openEffect: 'fade',
+            closeEffect: 'fade',
+            touchNavigation: true,
+            loop: true,
+            height: '90vh',
+            width: '1600px',
+            moreLength: 8000
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="about.html">O meni</a></li>
+                <li><a href="webprojects.html">Projekti</a></li>
+                <li><a href="photography.html">Fotografija</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li class="lang-switcher">
+                    <a href="contact.html">EN</a> | <a href="contact-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <div class="back-button">
+        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+    <section id="contact">
+        <h1>Stvarajmo zajedno sjajna digitalna iskustva!</h1>
+        <p>Želim doprinijeti timu u kojem mogu:</p>
+        <ul>
+            <li><b>Izrađivati ​​vizualno privlačne web dizajne</b> koji kombiniraju estetiku, upotrebljivost i identitet
+                brand-a
+            <li><b>Dizajnirati i razvijati responzivne web stranice</b> koristeći WordPress i/ili front-end tehnologije
+                (HTML, CSS, JavaScript, React)</li>
+            </li>
+            <li><b>Izrađivati ​​zanimljiv digitalni sadržaj</b> uključujući grafiku, rasporede i animacije</li>
+            <li><b>Integrirati originalne fotografije i vizualne prikaze dronom</b> kako bi se poboljšali digitalni
+                projekti, uključujući fotkanje na licu mjesta ili snimanje dronom ako je potrebno</li>
+            <li><b>Surađivati ​​s timovima</b> kako bi se isporučile uglađene, pristupačne web stranice i digitalni
+                proizvodi</li>
+        </ul>
+        <p>Uzbuđena sam pridružiti se kreativnom i inovativnom okruženju u kojem mogu profesionalno rasti dok
+            doprinosim svojim vještinama smislenim projektima. <br><b>Spremna sam pomoći vašem timu da oživi ideje.</b>
+        </p>
+        <p>Slobodno me kontaktirajte putem e-maila: <a
+                href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <h2>Uzbuđena sam što ćemo zajedno stvoriti nešto nevjerojatno! 😊</h2>
+    </section>
+
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
+        <p>Kontaktirajte me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        // Dohvati sve linkove iz navigacije
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Dohvati trenutni URL i izdvoji samo ime datoteke (npr. "about.html")
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Prođi kroz svaki link i provjeri odgovara li trenutnoj stranici
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

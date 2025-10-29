@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="about.html">O meni</a></li>
+                <li><a href="webprojects.html">Projekti</a></li>
+                <li><a href="photography.html">Fotografija</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li class="lang-switcher">
+                    <a href="index.html">EN</a> | <a href="index-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <section class="hero">
+        <img src="images/heroslika.png" alt="Sunset Image" class="hero-image">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>Dobrodošli na moj <b>Portfolio</b>!</h1>
+                <h2>~ Dizajniranje Priča Izvan Ekrana ~</h2>
+                <p>Bok! Ja sam <b>Lucija Babić</b>, web dizajnerica i front-end programerka.<br>
+                    Slobodno istražite moje projekte i otkrijte moju priču!</p>
+
+            </div>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn">O meni</a>
+                <a href="webprojects.html" class="btn">Projekti</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
+        <p>Kontaktirajte me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        // Dohvati sve linkove iz navigacije
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Dohvati trenutni URL i izdvoji samo ime datoteke (npr. "about.html")
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Prođi kroz svaki link i provjeri odgovara li trenutnoj stranici
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

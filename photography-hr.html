@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografija | Lucija Babić</title>
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo horizontal.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+                <li class="lang-switcher">
+                    <a href="photography.html">EN</a> | <a href="photography-hr.html">HR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="overlay"></div>
+
+    <div class="back-button">
+        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+    <section id="photography">
+        <h1>Moja fotografija</h1>
+        <p>
+            Apsolutno <b>obožavam boje</b> i potragu za <b>savršenim kutom i osvjetljenjem</b>. Moja Canon 250D kamera i
+            DJI Mini 2 dron pomažu mi da uhvatim svijet iz jedinstvenih perspektiva, bilo da se radi o prirodi,
+            pejzažima, portretima ili uličnoj fotografiji. Iako sam <b>amater</b>, fotografija mi omogućuje da izrazim
+            svoju kreativnost, a istovremeno pružam <b>originalne vizualne elemente za web i digitalne dizajnerske
+                projekte</b> - bilo da se radi o poboljšanju web stranice, stvaranju sadržaja za klijenta ili dodavanju
+            osobnih vizualnih detalja projektu. Također sam odabrana za sudjelovanje u međunarodnoj izložbi <i>Čovjek
+                2025</i>, što je potvrđeno certifikatom.
+        </p>
+
+    </section>
+
+
+    <main>
+        <div class="container">
+            <!-- Camera Section -->
+            <div class="box">
+                <h1>Fotografija kamerom</h1>
+                <div class="category">
+                    <h2>Priroda</h2>
+                    <div class="gallery">
+                        <!-- Example images for Nature -->
+                        <img src="images/IMG_0233.jpeg" alt="Nature 1" class="lightbox-img"
+                            data-large="images/IMG_0233.jpeg">
+                        <img src="images/IMG_0465.jpeg" alt="Nature 2" class="lightbox-img"
+                            data-large="images/IMG_0465.jpeg">
+                        <img src="images/IMG_9075.jpeg" alt="Nature 3" class="lightbox-img"
+                            data-large="images/IMG_9075.jpeg">
+                        <img src="images/IMG_0540.jpeg" alt="Nature 4" class="lightbox-img"
+                            data-large="images/IMG_0540.jpeg">
+                        <img src="images/IMG_0819.jpeg" alt="Nature 5" class="lightbox-img"
+                            data-large="images/IMG_0819.jpeg">
+                        <img src="images/IMG_0595.jpeg" alt="Nature 6" class="lightbox-img"
+                            data-large="images/IMG_0595.jpeg">
+                        <img src="images/IMG_0860.jpeg" alt="Nature 7" class="lightbox-img"
+                            data-large="images/IMG_0860.jpeg">
+                        <img src="images/IMG_1038.jpeg" alt="Nature 8" class="lightbox-img"
+                            data-large="images/IMG_1038.jpeg">
+                        <img src="images/IMG_1080.jpeg" alt="Nature 9" class="lightbox-img"
+                            data-large="images/IMG_1080.jpeg">
+                        <img src="images/IMG_7607.jpeg" alt="Nature 10" class="lightbox-img"
+                            data-large="images/IMG_7607.jpeg">
+                        <img src="images/IMG_1482.jpeg" alt="Nature 11" class="lightbox-img"
+                            data-large="images/IMG_1482.jpeg">
+                        <img src="images/IMG_7991.jpeg" alt="Nature 12" class="lightbox-img"
+                            data-large="images/IMG_7991.jpeg">
+                        <img src="images/IMG_8395.jpeg" alt="Nature 13" class="lightbox-img"
+                            data-large="images/IMG_8395.jpeg">
+                        <img src="images/IMG_2225.jpeg" alt="Nature 14" class="lightbox-img"
+                            data-large="images/IMG_2225.jpeg">
+                        <img src="images/IMG_9763.jpeg" alt="Nature 15" class="lightbox-img"
+                            data-large="images/IMG_9763.jpeg">
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>Portreti</h2>
+                    <div class="gallery">
+                        <!-- Example images for Portraits -->
+                        <img src="images/IMG_2319.jpeg" alt="Portrait 1" class="lightbox-img"
+                            data-large="images/IMG_2319.jpeg">
+                        <img src="images/IMG_2895.jpeg" alt="Portrait 2" class="lightbox-img"
+                            data-large="images/IMG_2895.jpeg">
+                        <img src="images/IMG_4045.jpeg" alt="Portrait 3" class="lightbox-img"
+                            data-large="images/IMG_4045.jpeg">
+                        <img src="images/IMG_6550.jpeg" alt="Portrait 4" class="lightbox-img"
+                            data-large="images/IMG_6550.jpeg">
+                        <img src="images/IMG_2409.jpeg" alt="Portrait 5" class="lightbox-img"
+                            data-large="images/IMG_2409.jpeg">
+                        <img src="images/IMG_2948.jpeg" alt="Portrait 6" class="lightbox-img"
+                            data-large="images/IMG_2948.jpeg">
+                        <img src="images/IMG_9862.jpeg" alt="Portrait 11" class="lightbox-img"
+                            data-large="images/IMG_9862.jpeg">
+                        <img src="images/IMG_2833.jpeg" alt="Portrait 7" class="lightbox-img"
+                            data-large="images/IMG_2833.jpeg">
+                        <img src="images/IMG_3986.jpeg" alt="Portrait 8" class="lightbox-img"
+                            data-large="images/IMG_3986.jpeg">
+                        <img src="images/IMG_3573.jpeg" alt="Portrait 9" class="lightbox-img"
+                            data-large="images/IMG_3573.jpeg">
+                        <img src="images/IMG_3084.jpeg" alt="Portrait 10" class="lightbox-img"
+                            data-large="images/IMG_3084.jpeg">
+                        <img src="images/IMG_3414.jpeg" alt="Portrait 12" class="lightbox-img"
+                            data-large="images/IMG_3414.jpeg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drone Section -->
+            <div class="box2">
+                <h1>Fotografija dronom</h1>
+                <div class="category">
+                    <h2>Fotografije</h2>
+                    <div class="gallery">
+                        <!-- Example images for Drone Photos -->
+                        <img src="images/DJI_0646.JPG" alt="Drone Photo 1" class="lightbox-img"
+                            data-large="images/DJI_0646.jpg">
+                        <img src="images/DJI_0395.JPG" alt="Drone Photo 2" class="lightbox-img"
+                            data-large="images/DJI_0395.jpg">
+                        <img src="images/DJI_0562.JPG" alt="Drone Photo 3" class="lightbox-img"
+                            data-large="images/DJI_0562.jpg">
+                        <img src="images/DJI_0576.JPG" alt="Drone Photo 4" class="lightbox-img"
+                            data-large="images/DJI_0576.jpg">
+                        <img src="images/DJI_0922.jpg" alt="Drone Photo 5" class="lightbox-img"
+                            data-large="images/DJI_0922.jpg">
+                        <img src="images/DJI_0636.JPG" alt="Drone Photo 6" class="lightbox-img"
+                            data-large="images/DJI_0636.jpg">
+                        <img src="images/DJI_0579.JPG" alt="Drone Photo 7" class="lightbox-img"
+                            data-large="images/DJI_0579.jpg">
+                        <img src="images/DJI_0635.JPG" alt="Drone Photo 8" class="lightbox-img"
+                            data-large="images/DJI_0635.jpg">
+                        <img src="images/DJI_0869.jpg" alt="Drone Photo 9" class="lightbox-img"
+                            data-large="images/DJI_0869.jpg">
+                        <img src="images/DJI_0050.jpg" alt="Drone Photo 10" class="lightbox-img"
+                            data-large="images/DJI_0050.jpg">
+                        <img src="images/DJI_0173.jpg" alt="Drone Photo 11" class="lightbox-img"
+                            data-large="images/DJI_0173.jpg">
+                        <img src="images/DJI_0523.jpg" alt="Drone Photo 13" class="lightbox-img"
+                            data-large="images/DJI_0523.jpg">
+                        <img src="images/DJI_0994.jpg" alt="Drone Photo 14" class="lightbox-img"
+                            data-large="images/DJI_0994.jpg">
+                        <img src="images/DJI_0726.JPG" alt="Drone Photo 15" class="lightbox-img"
+                            data-large="images/DJI_0726.jpg">
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>Videi</h2>
+                    <div class="gallery">
+                        <!-- Example Videos for Drone -->
+                        <video controls>
+                            <source src="images/dron_videi/4.MP4" type="video/mp4">
+                            Vaš preglednik ne podržava oznaku videa.
+                        </video>
+                        <video controls>
+                            <source src="images/dron_videi/2.MP4" type="video/mp4">
+                            Vaš preglednik ne podržava oznaku videa.
+                        </video>
+                        <video controls>
+                            <source src="images/dron_videi/3.MP4" type="video/mp4">
+                            Vaš preglednik ne podržava oznaku videa.
+                        </video>
+                        <video controls>
+                            <source src="images/dron_videi/1.MP4" type="video/mp4">
+                            Vaš preglednik ne podržava oznaku videa.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lightbox">
+            <span class="close">&times;</span>
+            <img id="lightbox-image" src="" alt="Expanded View">
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index-hr.html">Početna</a></li>
+                <li><a href="about-hr.html">O meni</a></li>
+                <li><a href="webprojects-hr.html">Projekti</a></li>
+                <li><a href="photography-hr.html">Fotografija</a></li>
+                <li><a href="contact-hr.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>© 2024 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
+        <p>Kontaktirajte me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
+        <img src="images/logo horizontal.png" width="200px">
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const currentPage = window.location.pathname.split("/").pop();
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeBtn = document.querySelector('#lightbox .close');
+        const images = document.querySelectorAll('.lightbox-img');
+
+        // Otvaranje lightboxa
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImage.src = img.dataset.large;
+            });
+        });
+
+        // Zatvaranje lightboxa
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Zatvaranje klikom izvan slike
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImage) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+        });
+
+    </script>
+</body>
+
+</html>
