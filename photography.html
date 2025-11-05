@@ -151,34 +151,34 @@
                     <h2>Photos</h2>
                     <div class="gallery">
                         <!-- Example images for Drone Photos -->
-                        <img src="images/DJI_0646.JPG" alt="Drone Photo 1" class="lightbox-img"
-                            data-large="images/DJI_0646.jpg">
-                        <img src="images/DJI_0395.JPG" alt="Drone Photo 2" class="lightbox-img"
-                            data-large="images/DJI_0395.jpg">
-                        <img src="images/DJI_0562.JPG" alt="Drone Photo 3" class="lightbox-img"
-                            data-large="images/DJI_0562.jpg">
-                        <img src="images/DJI_0576.JPG" alt="Drone Photo 4" class="lightbox-img"
-                            data-large="images/DJI_0576.jpg">
+                        <img src="images/DJI_0646.jpeg" alt="Drone Photo 1" class="lightbox-img"
+                            data-large="images/DJI_0646.jpeg">
+                        <img src="images/DJI_0395.jpeg" alt="Drone Photo 2" class="lightbox-img"
+                            data-large="images/DJI_0395.jpeg">
+                        <img src="images/DJI_0562.jpeg" alt="Drone Photo 3" class="lightbox-img"
+                            data-large="images/DJI_0562.jpeg">
+                        <img src="images/DJI_0576.jpeg" alt="Drone Photo 4" class="lightbox-img"
+                            data-large="images/DJI_0576.jpeg">
                         <img src="images/DJI_0922.jpg" alt="Drone Photo 5" class="lightbox-img"
                             data-large="images/DJI_0922.jpg">
-                        <img src="images/DJI_0636.JPG" alt="Drone Photo 6" class="lightbox-img"
-                            data-large="images/DJI_0636.jpg">
-                        <img src="images/DJI_0579.JPG" alt="Drone Photo 7" class="lightbox-img"
-                            data-large="images/DJI_0579.jpg">
-                        <img src="images/DJI_0635.JPG" alt="Drone Photo 8" class="lightbox-img"
-                            data-large="images/DJI_0635.jpg">
+                        <img src="images/DJI_0636.jpeg" alt="Drone Photo 6" class="lightbox-img"
+                            data-large="images/DJI_0636.jpeg">
+                        <img src="images/DJI_0579.jpeg" alt="Drone Photo 7" class="lightbox-img"
+                            data-large="images/DJI_0579.jpeg">
+                        <img src="images/DJI_0635.jpeg" alt="Drone Photo 8" class="lightbox-img"
+                            data-large="images/DJI_0635.jpeg">
                         <img src="images/DJI_0869.jpg" alt="Drone Photo 9" class="lightbox-img"
                             data-large="images/DJI_0869.jpg">
                         <img src="images/DJI_0050.jpg" alt="Drone Photo 10" class="lightbox-img"
                             data-large="images/DJI_0050.jpg">
                         <img src="images/DJI_0173.jpg" alt="Drone Photo 11" class="lightbox-img"
                             data-large="images/DJI_0173.jpg">
-                        <img src="images/DJI_0523.JPG" alt="Drone Photo 13" class="lightbox-img"
-                            data-large="images/DJI_0523.jpg">
+                        <img src="images/DJI_0523.jpeg" alt="Drone Photo 13" class="lightbox-img"
+                            data-large="images/DJI_0523.jpeg">
                         <img src="images/DJI_0994.jpg" alt="Drone Photo 14" class="lightbox-img"
                             data-large="images/DJI_0994.jpg">
-                        <img src="images/DJI_0726.JPG" alt="Drone Photo 15" class="lightbox-img"
-                            data-large="images/DJI_0726.jpg">
+                        <img src="images/DJI_0726.jpeg" alt="Drone Photo 15" class="lightbox-img"
+                            data-large="images/DJI_0726.jpeg">
                     </div>
                 </div>
                 <div class="category">
@@ -208,6 +208,8 @@
         <div id="lightbox">
             <span class="close">&times;</span>
             <img id="lightbox-image" src="" alt="Expanded View">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
         </div>
     </main>
 
@@ -238,10 +240,15 @@
         const lightboxImage = document.getElementById('lightbox-image');
         const closeBtn = document.querySelector('#lightbox .close');
         const images = document.querySelectorAll('.lightbox-img');
+        const prevBtn = document.querySelector('#lightbox .prev');
+        const nextBtn = document.querySelector('#lightbox .next');
+
+        let currentIndex = 0;
 
         // Otvaranje lightboxa
-        images.forEach(img => {
+        images.forEach((img, index) => {  // dodaj index
             img.addEventListener('click', () => {
+                currentIndex = index;      // sada index postoji
                 lightbox.style.display = 'flex';
                 lightboxImage.src = img.dataset.large;
             });
@@ -256,6 +263,27 @@
         lightbox.addEventListener('click', (e) => {
             if (e.target !== lightboxImage) {
                 lightbox.style.display = 'none';
+            }
+        });
+
+        // Prethodna / sljedeća slika
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImage.src = images[currentIndex].dataset.large;
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImage.src = images[currentIndex].dataset.large;
+        });
+
+        // Tipke na tipkovnici
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'ArrowRight') nextBtn.click();
+                if (e.key === 'Escape') closeBtn.click();
             }
         });
 

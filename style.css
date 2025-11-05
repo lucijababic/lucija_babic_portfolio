@@ -273,6 +273,7 @@ nav ul li a:hover {
     background-color: #D95B72;
 }
 
+
 @media (max-width: 1024px) {
     .section.section-background {
         flex: 1 1 calc(50% - 20px);
@@ -651,7 +652,7 @@ h3 i {
 .scroll-container {
     width: 100%;
     max-width: 1500px;
-    max-height: 90vh;   
+    max-height: 90vh;
     overflow: auto;
     background-color: #fff;
     padding: 20px;
@@ -847,6 +848,8 @@ h3 i {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
 }
 
 #lightbox .close {
@@ -857,7 +860,53 @@ h3 i {
     font-weight: bold;
     cursor: pointer;
     z-index: 1001;
+    font-size: 2rem;
 }
+
+#lightbox .prev,
+#lightbox .next {
+    position: absolute;
+    top: 50%;
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 1001;
+    padding: 0 10px;
+}
+
+#lightbox .prev {
+    left: 10px;
+}
+
+#lightbox .next {
+    right: 10px;
+}
+
+.glightbox-container .scroll-container {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+}
+
+.glightbox-container .scroll-container img {
+    width: 100%;
+    max-width: none;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.glightbox-close {
+    color: white;
+    font-size: 2rem;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
 
 /* Contact */
 #contact {
@@ -896,14 +945,24 @@ h3 i {
     font-family: 'Montserrat', sans-serif;
 }
 
-#contact a {
-    color: #A61C35;
-    text-decoration: none;
+.kontakt-zona {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-#contact a:hover {
-    color: #D95B72;
-    text-decoration: underline;
+.kontakt-zona a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #A61C35;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.kontakt-zona a:hover {
+    background-color: #D95B72;
 }
 
 /* Back button */
@@ -984,6 +1043,7 @@ footer nav ul li {
 }
 
 @media (max-width: 768px) {
+
     /*Header i Nav*/
     header {
         padding: 10px 20px;
@@ -1103,6 +1163,10 @@ footer nav ul li {
 
     .contact-me {
         margin-top: 50px;
+    }
+
+    .kontakt-zona {
+        text-align: center;
     }
 
     /* About right */
