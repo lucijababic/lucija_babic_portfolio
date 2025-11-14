@@ -42,7 +42,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="webprojects.html">Web Projects</a></li>
                 <li><a href="photography.html">Photography</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="lang-switcher">
@@ -59,47 +59,50 @@
     </div>
 
     <section id="contact">
-        <h1>Let’s Build Great Digital Experiences Together!</h1>
-        <p>I’m eager to contribute to a team where I can:</p>
-        <ul>
-            <li><b>Create visually compelling web designs</b> that combine aesthetics, usability, and brand identity
-            <li><b>Design and develop responsive websites</b> using WordPress and/or front-end technologies (HTML,
-                CSS,
-                JavaScript, React)</li>
-            </li>
-            <li><b>Produce engaging digital content</b> including graphics, layouts, and animations</li>
-            <li><b>Integrate original photography and drone visuals</b> to enhance digital projects, including on-site
-                photos or drone footage if needed</li>
-            <li><b>Collaborate with teams</b> to deliver polished, user-friendly websites and digital products</li>
-        </ul>
-        <p>I’m enthusiastic about joining a creative and innovative environment where I can grow professionally while
-            contributing my skills to meaningful projects. <br><b>I’m ready to help bring your team’s ideas to life.</b>
-        </p>
+        <div class="contact-container">
+            <div class="contact-text reveal">
+                <h1>Let's create together!</h1>
+                <p>I am open to collaborations on visually appealing web projects and brand identities that connect
+                    aesthetics and functionality.</p>
+                <ul>
+                    <li><i class="fas fa-laptop-code"></i> web design and front-end development</li>
+                    <li><i class="fas fa-camera"></i> drone photography and visuals</li>
+                    <li><i class="fas fa-palette"></i> visual identity and brand design</li>
+                    <li><i class="fas fa-users"></i> creative collaboration and team projects</li>
+                </ul>
+            </div>
 
-        <div class="kontakt-zona">
-            <p>Feel free to reach me via email: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a>
-            </p>
+            <div class="contact-form reveal">
+                <form id="contactForm" action="https://formspree.io/f/mgvrvqle" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="_replyto" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                    <p id="form-status" class="form-status"></p>
+                </form>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/lucija_babic" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/lucija-babi%C4%879/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-
-        <h2>Excited to create something amazing together! 😊</h2>
     </section>
-
-
-
-
-
-
-
-
-
-
 
     <footer>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="webprojects.html">Projects</a></li>
+                <li><a href="webprojects.html">Web Projects</a></li>
                 <li><a href="photography.html">Photography</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -133,9 +136,49 @@
             overlay.classList.toggle('active');
         });
 
+        const reveals = document.querySelectorAll(".reveal");
+
+        function revealOnScroll() {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("form-status");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    status.textContent = "✅ Message successfully sent!";
+                    status.classList.add("success");
+                    form.reset();
+                } else {
+                    status.textContent = "⚠️ An error occurred. Please try again.";
+                    status.classList.add("error");
+                }
+            } catch (error) {
+                status.textContent = "⚠️ An error occurred. Please try again.";
+                status.classList.add("error");
+            }
+        });
     </script>
-
-
 
 </body>
 
