@@ -287,7 +287,7 @@ nav ul li a:hover {
 }
 
 .toggle-more:hover {
-    background-color: #D95B72;
+    background-color: #A61C35;
 }
 
 @media (max-width: 1024px) {
@@ -366,9 +366,6 @@ nav ul li a:hover {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
 .about-section h2 {
     font-size: 30px;
     margin-bottom: 10px;
@@ -384,7 +381,6 @@ nav ul li a:hover {
 .about-section .highlight {
     color: #D95B72;
 }
-
 
 .about-sections {
     background: linear-gradient(130deg, #fff 5%, #fff0f3);
@@ -431,7 +427,7 @@ h3 i {
 }
 
 .section-background {
-    background: linear-gradient(to bottom, #ec8d8d9c, #f2f2f2);
+    background: linear-gradient(to bottom, #f1c3c39c, #fff);
     padding: 60px 20px;
     border-radius: 15px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -461,7 +457,6 @@ h3 i {
 }
 
 .timeline-item:hover {
-    background-color: #F2A7B5;
     transform: scale(1.02);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -651,12 +646,13 @@ h3 i {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: #ffffffa2;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
     gap: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #webprojects .intro {
@@ -690,7 +686,7 @@ h3 i {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 #webprojects p {
@@ -698,6 +694,11 @@ h3 i {
     color: #333;
     margin-bottom: 20px;
     text-align: justify;
+}
+
+#webprojects .programs-list {
+    color: grey;
+    padding-top: 20px;
 }
 
 .scroll-container {
@@ -759,6 +760,12 @@ h3 i {
     text-align: center;
     font-size: 14px;
     color: #A61C35;
+}
+
+#webprojects .moretocome{
+    padding-top: 40px;
+    text-align: center;
+    padding-left: 0px;
 }
 
 .back-top {
@@ -876,19 +883,24 @@ h3 i {
 
 .box2 h2,
 .box2 h1 {
-    color: #f2f2f2;
+    color: #A61C35;
+}
+
+.box h2,
+.box h1 {
+    color: #f2f2f2 !important;
 }
 
 .box {
     padding: 20px;
-    background-color: #FFF;
+    background-color: #A61C35;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 .box2 {
     padding: 20px;
-    background-color: #A61C35;
+    background-color: #ffffffa2;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -1739,7 +1751,7 @@ footer nav ul li {
         flex-direction: column;
         align-items: center;
         gap: 40px;
-        margin: 40px auto;
+        padding-top: 20px;
     }
 
     #photos .box,
@@ -1755,7 +1767,13 @@ footer nav ul li {
     #photos .box h1,
     #photos .box2 h1 {
         font-size: 30px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+
+    #photos .box h2,
+    #photos .box2 h2 {
+        margin-top: 30px;
     }
 
     #photography {

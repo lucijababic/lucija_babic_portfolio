@@ -67,8 +67,8 @@
 
                 <br>
 
-                <p>My path in tech started with a mix of creativity and curiosity.
-                    I’ve always loved seeing ideas come to life through design and code - that
+                <p>My path in tech started with a mix of <b>creativity</b> and <b>curiosity</b>.
+                    I’ve always loved seeing <b>ideas come to life</b> through <b>design</b> and <b>code</b> - that
                     process still motivates me today.</p>
 
                 <br>
@@ -381,7 +381,7 @@
                         obs.unobserve(entry.target);
                     }
                 });
-            },);
+            }, { threshold: 0.1 });
 
             sections.forEach(sec => observer.observe(sec));
         });
@@ -391,10 +391,10 @@
                 const fullList = btn.nextElementSibling;
                 if (fullList.style.display === "none") {
                     fullList.style.display = "block";
-                    btn.textContent = "Sakrij";
+                    btn.textContent = "Close";
                 } else {
                     fullList.style.display = "none";
-                    btn.textContent = "Vidi više";
+                    btn.textContent = "See more";
                 }
             });
         });
