@@ -72,6 +72,7 @@
                 </ul>
             </div>
 
+
             <div class="contact-form reveal">
                 <form id="contactForm" action="https://formspree.io/f/mgvrvqle" method="POST">
                     <label for="name">Name</label>
@@ -113,13 +114,10 @@
     </footer>
 
     <script>
-        // Dohvati sve linkove iz navigacije
         const navLinks = document.querySelectorAll('nav ul li a');
 
-        // Dohvati trenutni URL i izdvoji samo ime datoteke (npr. "about.html")
         const currentPage = window.location.pathname.split("/").pop();
 
-        // Prođi kroz svaki link i provjeri odgovara li trenutnoj stranici
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('active');
@@ -136,22 +134,20 @@
             overlay.classList.toggle('active');
         });
 
-        const reveals = document.querySelectorAll(".reveal");
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
 
-        function revealOnScroll() {
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const revealPoint = 100;
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            });
 
-                if (elementTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-
-        window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll();
+            reveals.forEach(el => observer.observe(el));
+        });
 
         const form = document.getElementById("contactForm");
         const status = document.getElementById("form-status");

@@ -58,15 +58,17 @@
     </div>
 
     <section id="photography">
-        <h1>My Photography</h1>
+        <h1>Photography</h1>
         <p>
-            I absolutely <b>adore colors</b> and the search for the <b>perfect angle and lighting</b>. My Canon 250D
-            camera and DJI Mini 2 drone help me capture the world from unique perspectives, whether nature, landscapes,
-            portraits, or street photography. Though an <b>amateur</b>, photography allows me to express my creativity
-            while also providing <b>original visuals for web and digital design projects</b> - whether enhancing a
-            website, creating content for a client, or adding personal visual touches to a project. I have also been selected
-            to participate in the selected international exhibition <i>Man 2025</i>.
+            I absolutely <b>love colors</b> and the pursuit of the <b>perfect angle and lighting</b>. My Canon camera
+            and DJI drone help me capture the world from unique perspectives - nature, landscapes, portraits, or street
+            photography.
+            <br><br>
+            Although I am an <b>amateur</b>, photography allows me to express my creativity and provide <b>original
+                visual elements for web and digital projects</b>. I was also selected to participate in the
+            international curated exhibition <i>Čovjek 2025</i>.
         </p>
+
 
     </section>
 
@@ -184,20 +186,19 @@
                 <div class="category">
                     <h2>Videos</h2>
                     <div class="gallery">
-                        <!-- Example Videos for Drone -->
-                        <video controls>
+                        <video controls poster="images/dron_videi/4_poster.png">
                             <source src="./images/dron_videi/4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/2_poster.png">
                             <source src="./images/dron_videi/2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/3_poster.png">
                             <source src="./images/dron_videi/3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/1_poster.png">
                             <source src="./images/dron_videi/1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -246,9 +247,9 @@
         let currentIndex = 0;
 
         // Otvaranje lightboxa
-        images.forEach((img, index) => {  // dodaj index
+        images.forEach((img, index) => {
             img.addEventListener('click', () => {
-                currentIndex = index;      // sada index postoji
+                currentIndex = index;
                 lightbox.style.display = 'flex';
                 lightboxImage.src = img.dataset.large;
             });

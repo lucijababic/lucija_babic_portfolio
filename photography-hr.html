@@ -58,15 +58,15 @@
     </div>
 
     <section id="photography">
-        <h1>Moja Fotografija</h1>
+        <h1>Fotografija</h1>
         <p>
-            Apsolutno <b>obožavam boje</b> i potragu za <b>savršenim kutom i osvjetljenjem</b>. Moja Canon 250D kamera i
-            DJI Mini 2 dron pomažu mi da uhvatim svijet iz jedinstvenih perspektiva, bilo da se radi o prirodi,
-            pejzažima, portretima ili uličnoj fotografiji. Iako sam <b>amater</b>, fotografija mi omogućuje da izrazim
-            svoju kreativnost, a istovremeno pružam <b>originalne vizualne elemente za web i digitalne dizajnerske
-                projekte</b> - bilo da se radi o poboljšanju web stranice, stvaranju sadržaja za klijenta ili dodavanju
-            osobnih vizualnih detalja projektu. Također sam bila odabrana za sudjelovanje u međunarodnoj selektiranoj izložbi <i>Čovjek
-                2025</i>.
+            Apsolutno <b>obožavam boje</b> i potragu za <b>savršenim kutom i osvjetljenjem</b>. Moja Canon kamera i DJI
+            dron pomažu mi da uhvatim svijet iz jedinstvenih perspektiva - prirodu, pejzaže, portrete ili ulično
+            snimanje. 
+            <br><br>
+            Iako sam <b>amater</b>, fotografija mi omogućuje da izrazim kreativnost i pružim <b>originalne
+                vizualne elemente za web i digitalne projekte</b>. Također sam sudjelovala u međunarodnoj selektiranoj
+            izložbi <i>Čovjek 2025</i>.
         </p>
 
     </section>
@@ -83,16 +83,12 @@
                         <!-- Example images for Nature -->
                         <img src="images/IMG_0233.jpeg" alt="Nature 1" class="lightbox-img"
                             data-large="images/IMG_0233.jpeg">
-                        <img src="images/IMG_0465.jpeg" alt="Nature 2" class="lightbox-img"
-                            data-large="images/IMG_0465.jpeg">
                         <img src="images/IMG_9075.jpeg" alt="Nature 3" class="lightbox-img"
                             data-large="images/IMG_9075.jpeg">
                         <img src="images/IMG_0540.jpeg" alt="Nature 4" class="lightbox-img"
                             data-large="images/IMG_0540.jpeg">
                         <img src="images/IMG_0819.jpeg" alt="Nature 5" class="lightbox-img"
                             data-large="images/IMG_0819.jpeg">
-                        <img src="images/IMG_0595.jpeg" alt="Nature 6" class="lightbox-img"
-                            data-large="images/IMG_0595.jpeg">
                         <img src="images/IMG_0860.jpeg" alt="Nature 7" class="lightbox-img"
                             data-large="images/IMG_0860.jpeg">
                         <img src="images/IMG_1038.jpeg" alt="Nature 8" class="lightbox-img"
@@ -107,8 +103,6 @@
                             data-large="images/IMG_2225.jpeg">
                         <img src="images/IMG_8395.jpeg" alt="Nature 13" class="lightbox-img"
                             data-large="images/IMG_8395.jpeg">
-                        <img src="images/IMG_9763.jpeg" alt="Nature 15" class="lightbox-img"
-                            data-large="images/IMG_9763.jpeg">
                         <img src="images/IMG_2085.jpeg" alt="Nature 12" class="lightbox-img"
                             data-large="images/IMG_2085.jpeg">
                     </div>
@@ -185,24 +179,22 @@
                 <div class="category">
                     <h2>Videi</h2>
                     <div class="gallery">
-                        <!-- Example Videos for Drone -->
-                        <video controls>
+                        <video controls poster="images/dron_videi/4_poster.png">
                             <source src="./images/dron_videi/4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/2_poster.png">
                             <source src="./images/dron_videi/2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/3_poster.png">
                             <source src="./images/dron_videi/3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls>
+                        <video controls poster="images/dron_videi/1_poster.png">
                             <source src="./images/dron_videi/1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-
                     </div>
                 </div>
             </div>
@@ -249,9 +241,9 @@
         let currentIndex = 0;
 
         // Otvaranje lightboxa
-        images.forEach((img, index) => {  // dodaj index
+        images.forEach((img, index) => {
             img.addEventListener('click', () => {
-                currentIndex = index;      // sada index postoji
+                currentIndex = index;
                 lightbox.style.display = 'flex';
                 lightboxImage.src = img.dataset.large;
             });
