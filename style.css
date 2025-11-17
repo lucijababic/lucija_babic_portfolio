@@ -171,63 +171,113 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+
 .hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     color: #F2F2F2;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
-    margin-top: 140px;
+    margin-top: 160px;
 }
 
 .hero-text h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 35px;
+    font-size: 25px;
+    color: #fff;
     font-weight: 500;
-    color: #A61C35;
+    padding-top: 0px;
+    margin-top: 0px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-family: 'Montserrat', sans-serif;
+    display: block;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 50px;
     color: #F2F2F2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(248, 246, 246, 0.197);
+    padding: 5px 55px; 
+    border-radius: 50px;
+}
+
+
+#typewriter {
+    border-right: 3px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* treptanje kursora */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#typewriter {
+    animation: blink 0.7s step-end infinite;
+}
+
+@media (max-width: 768px) {
+  #typewriter {
+    display: block;
+  }
 }
 
 .hero-text b {
     color: #A61C35;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 60px;
     margin-top: 30px;
 }
 
 .btn {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    background-color: #A61C35;
-    text-decoration: none;
-    padding: 20px 40px;
-    border-radius: 50px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background-color: #A61C35;
+  text-decoration: none;
+  padding: 20px 30px;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #A61C35, #D95B72);
-    transform: scale(1.1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 40%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50px;
+  transition: background 0.2s;
+}
+
+
 
 /* About Page */
 #about {
@@ -400,7 +450,7 @@ nav ul li a:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     max-height: 650px;
-    overflow-y: auto;   
+    overflow-y: auto;
 }
 
 .about-sections>section:nth-child(5) {

@@ -62,13 +62,19 @@
             <div class="hero-text">
                 <h1>Welcome To My <b>Portfolio</b>!</h1>
                 <h2>~ Designing Stories Beyond Screens ~</h2>
-                <p>Hi! I'm <b>Lucija Babić</b>, a web designer and front-end developer.<br>
-                    Feel free to explore my projects and discover my story!</p>
+                <br>
+                <p>
+                    Hi! I'm Lucija Babić, a
+                    <b><span id="typewriter"></span></b>
+                    Feel free to explore my projects<br>
+                    and discover my story!
+                </p>
+
 
             </div>
             <div class="hero-buttons">
                 <a href="about.html" class="btn">About Me</a>
-                <a href="webprojects.html" class="btn">Projects</a>
+                <a href="webprojects.html" class="btn">Web Projects</a>
             </div>
         </div>
     </section>
@@ -111,6 +117,57 @@
             navMenu.classList.toggle('show');
             overlay.classList.toggle('active');
         });
+
+        const words = ["web designer", "front-end developer"];
+        const typewriter = document.getElementById("typewriter");
+        let i = 0;
+        let j = 0;
+        let currentWord = '';
+        let isDeleting = false;
+
+        function type() {
+            const fullWord = words[i];
+
+            if (!isDeleting) {
+                currentWord = fullWord.substring(0, j + 1);
+                j++;
+            } else {
+                currentWord = fullWord.substring(0, j - 1);
+                j--;
+            }
+
+            typewriter.textContent = currentWord;
+
+            if (!isDeleting && j === fullWord.length) {
+                isDeleting = true;
+                setTimeout(type, 1500); // pauza nakon ispisivanja
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+
+        type();
+
+
+        const buttons = document.querySelectorAll('.btn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                btn.style.setProperty('--x', x + 'px');
+                btn.style.setProperty('--y', y + 'px');
+            });
+        });
+
+
+
 
     </script>
 

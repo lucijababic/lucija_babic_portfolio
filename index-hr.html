@@ -62,8 +62,10 @@
             <div class="hero-text">
                 <h1>Dobrodošli Na Moj <b>Portfolio</b>!</h1>
                 <h2>~ Dizajniranje Priča Izvan Ekrana ~</h2>
-                <p>Bok! Ja sam <b>Lucija Babić</b>, web dizajnerica i front-end programerka.<br>
-                    Slobodno istražite moje projekte i otkrijte moju priču!</p>
+                <br>
+                <p>Bok! Ja sam Lucija Babić, 
+                    <b><span id="typewriter"></span></b>
+                    Slobodno istražite moje projekte<br>i otkrijte moju priču!</p>
 
             </div>
             <div class="hero-buttons">
@@ -110,6 +112,54 @@
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('show');
             overlay.classList.toggle('active');
+        });
+
+        const words = ["web dizajner", "front-end developer"];
+        const typewriter = document.getElementById("typewriter");
+        let i = 0;
+        let j = 0;
+        let currentWord = '';
+        let isDeleting = false;
+
+        function type() {
+            const fullWord = words[i];
+
+            if (!isDeleting) {
+                currentWord = fullWord.substring(0, j + 1);
+                j++;
+            } else {
+                currentWord = fullWord.substring(0, j - 1);
+                j--;
+            }
+
+            typewriter.textContent = currentWord;
+
+            if (!isDeleting && j === fullWord.length) {
+                isDeleting = true;
+                setTimeout(type, 1500); // pauza nakon ispisivanja
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+
+        type();
+
+
+        const buttons = document.querySelectorAll('.btn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                btn.style.setProperty('--x', x + 'px');
+                btn.style.setProperty('--y', y + 'px');
+            });
         });
 
     </script>
