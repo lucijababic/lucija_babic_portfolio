@@ -9,7 +9,7 @@
         content="Lucija Babić, portfolio, web dizajn, web develop, front-end, fotografija, projekti, kontakt">
     <meta name="description"
         content="Lucija Babić – portfolio: web dizajn, web razvoj i fotografija. Pogledajte moje radove i kontaktirajte me za suradnju.">
-    <title>Fotografija | Lucija Babić</title>
+    <title>Lucija Babić | Fotografija</title>
     <!-- Standard favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -25,7 +25,6 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -184,19 +183,19 @@
                 <div class="category">
                     <h2>Videi</h2>
                     <div class="gallery">
-                        <video controls poster="images/dron_videi/4_poster.png">
+                        <video controls poster="images/dron_videi/4_poster.png" preload="none">
                             <source src="./images/dron_videi/4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls poster="images/dron_videi/2_poster.png">
+                        <video controls poster="images/dron_videi/2_poster.png" preload="none">
                             <source src="./images/dron_videi/2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls poster="images/dron_videi/3_poster.png">
+                        <video controls poster="images/dron_videi/3_poster.png" preload="none">
                             <source src="./images/dron_videi/3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <video controls poster="images/dron_videi/1_poster.png">
+                        <video controls poster="images/dron_videi/1_poster.png" preload="none">
                             <source src="./images/dron_videi/1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -261,30 +260,49 @@
 
         // Zatvaranje klikom izvan slike
         lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImage) {
+            if (e.target !== lightboxImage && !e.target.classList.contains('prev') && !e.target.classList.contains('next')) {
                 lightbox.style.display = 'none';
             }
         });
 
-        // Prethodna / sljedeća slika
-        prevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        // Prethodna / sljedeća slika preko dugmadi
+        function showPrev() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             lightboxImage.src = images[currentIndex].dataset.large;
-        });
-        nextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        }
+        function showNext() {
             currentIndex = (currentIndex + 1) % images.length;
             lightboxImage.src = images[currentIndex].dataset.large;
+        }
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+        // Klik lijevo/desno po cijeloj strani
+        lightbox.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = lightbox.clientWidth;
+            if (x < width / 2) showPrev();
+            else if (x > width / 2) showNext();
         });
 
         // Tipke na tipkovnici
         document.addEventListener('keydown', (e) => {
             if (lightbox.style.display === 'flex') {
-                if (e.key === 'ArrowLeft') prevBtn.click();
-                if (e.key === 'ArrowRight') nextBtn.click();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
                 if (e.key === 'Escape') closeBtn.click();
             }
+        });
+
+        // Swipe za mobilne uređaje
+        let startX = 0;
+        lightboxImage.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+        lightboxImage.addEventListener('touchend', e => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) showNext(); // swipe lijevo
+            if (endX - startX > 50) showPrev(); // swipe desno
         });
 
         const hamburger = document.getElementById('hamburger');

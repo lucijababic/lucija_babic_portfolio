@@ -9,7 +9,7 @@
         content="Lucija Babić, portfolio, web design, web development, front-end, photography, projects, contact">
     <meta name="description"
         content="Lucija Babić – portfolio: web design, web development, and photography. Check out my work and get in touch for collaboration.">
-    <title>Home | Lucija Babić</title>
+    <title>Lucija Babić | Home</title>
     <!-- Standard favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -150,6 +150,22 @@
         });
 
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.hero-content');
+
+            sections.forEach(sec => sec.classList.add('reveal'));
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(sec => observer.observe(sec));
+        });
 
 
     </script>
