@@ -145,136 +145,134 @@ nav ul li a:hover {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #D9ADB5;
-    padding: 20px 0;
-}
-
-.hero-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    object-position: center;
-}
-
-.hero-overlay {
-    position: relative;
-    z-index: 2;
+    padding: 20px 40px;
     text-align: center;
-    color: #F2F2F2;
-    padding: 20px;
-}
+    gap: 10px;
 
-
-.hero-text h1 {
-    font-size: 50px;
-    font-weight: 700;
-    color: #F2F2F2;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-    margin-top: 160px;
-}
-
-.hero-text h2 {
-    font-size: 25px;
-    color: #fff;
-    font-weight: 500;
-    padding-top: 0px;
-    margin-top: 0px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    display: block;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 50px;
-    color: #F2F2F2;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(248, 246, 246, 0.197);
-    padding: 5px 55px; 
-    border-radius: 50px;
-}
-
-
-#typewriter {
-    border-right: 3px solid #fff;
-    white-space: nowrap;
+    /* elegantni mesh gradient */
+    background: radial-gradient(circle at 20% 30%, #d95b72 0%, rgba(255, 255, 255, 0) 60%),
+        radial-gradient(circle at 80% 70%, #a61c35 0%, rgba(255, 255, 255, 0) 70%),
+        #f7f7f7;
     overflow: hidden;
-    display: inline-block;
-    vertical-align: bottom;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* ---------- TEXT ---------- */
+
+.hero-tag {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #333;
+    opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    letter-spacing: 1.3px;
+    font-size: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+/* ---------- ROLE ANIMATION ---------- */
+
+.hero-roles {
+    height: 76px;
+    margin-bottom: 45px;
+    overflow: hidden;
+    position: relative;
+    width: 80vw;
+    max-width: none;
+    margin-left: calc(50% - 40vw);
+}
+
+.hero-roles .role {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 35px;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #a61c35;
 }
 
-/* treptanje kursora */
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+.hero-roles .role.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-#typewriter {
-    animation: blink 0.7s step-end infinite;
-}
-
-@media (max-width: 768px) {
-  #typewriter {
-    display: block;
-  }
-}
-
-.hero-text b {
-    color: #A61C35;
-}
 
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 50px;
     margin-top: 30px;
 }
 
 .btn {
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: white;
-  background-color: #A61C35;
-  text-decoration: none;
-  padding: 20px 30px;
-  border-radius: 50px;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #A61C35;
+    text-decoration: none;
+    padding: 18px 28px;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn::before {
-  content: '';
-  position: absolute;
-  top: var(--y, 50%);
-  left: var(--x, 50%);
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 40%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 50px;
-  transition: background 0.2s;
+    content: '';
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 40%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50px;
+    transition: background 0.2s;
+}
+
+.hero-photo {
+    padding-top: 100px;
+}
+
+.hero-photo img {
+    height: 650px;
+    width: auto;
 }
 
 
@@ -1485,6 +1483,50 @@ footer nav ul li {
         display: flex;
     }
 
+    /*Hero*/
+    .hero {
+        flex-direction: column;
+        height: 1000px;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .hero-title {
+        padding-top: 90px;
+    }
+
+    .hero-subtitle {
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+    .hero-roles {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-roles .role {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .hero-buttons {
+        gap: 30px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 16px 24px;
+    }
+
+    .hero-photo img {
+        height: 500px;
+        width: auto;
+        padding-bottom: 0px;
+    }
+
     /*Web Projects*/
     #webprojects .container {
         flex-direction: column;
@@ -1900,35 +1942,46 @@ footer nav ul li {
 
 @media (max-width: 430px) {
 
-    /*Hero*/
     .hero {
-        margin-bottom: 0px;
-        margin-top: -50px;
+        padding: 15px;
+        height: 750px;
     }
 
-    .hero .hero-buttons {
-        flex-direction: row;
-        gap: 25px;
-        margin-top: -15px;
+    .hero-title {
+        font-size: 1.1rem;
     }
 
-    .hero .hero-text h1 {
-        font-size: 2em;
-        padding-top: 130px;
+    .hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 
-    .hero .hero-text h2 {
-        font-size: 1.05em;
+    .hero-roles {
+        margin-bottom: 5px;
     }
 
-    .hero .hero-text p {
-        font-size: 0.8rem;
+    .hero-roles .role {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .btn {
-        font-size: 17px;
-        padding: 10px 25px;
-        margin-bottom: 130px;
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+
+    .hero-photo {
+        padding-top: 30px;
+    }
+
+    .hero-photo img {
+        height: 380px;
+
     }
 
     /*About*/

@@ -57,26 +57,33 @@
     <div id="overlay"></div>
 
     <section class="hero">
-        <img src="images/heroslika.png" alt="Sunset Image" class="hero-image">
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1>Welcome To My <b>Portfolio</b>!</h1>
-                <h2>~ Designing Stories Beyond Screens ~</h2>
-                <br>
-                <p>
-                    Hi! I'm Lucija Babić, a
-                    <b><span id="typewriter"></span></b>
-                    Feel free to explore my projects<br>
-                    and discover my story!
-                </p>
+        <div class="hero-content">
 
+            <p class="hero-title">
+                Hi! I'm Lucija, a
+            </p>
 
+            <div class="hero-roles hero-headline">
+                <span class="role active">Web Designer</span>
+                <span class="role">Front-End Developer</span>
+                <span class="role">UI/UX Designer</span>
+                <span class="role">Branding Creative</span>
             </div>
+
+            <p class="hero-subtitle">
+                Feel free to explore my projects & discover my story!
+            </p>
+
             <div class="hero-buttons">
                 <a href="about.html" class="btn">About Me</a>
                 <a href="webprojects.html" class="btn">Web Projects</a>
             </div>
+
         </div>
+        <div class="hero-photo">
+            <img src="images/hero-photo.png" alt="Personal Photo">
+        </div>
+
     </section>
 
     <footer>
@@ -118,39 +125,15 @@
             overlay.classList.toggle('active');
         });
 
-        const words = ["web designer", "front-end developer"];
-        const typewriter = document.getElementById("typewriter");
-        let i = 0;
-        let j = 0;
-        let currentWord = '';
-        let isDeleting = false;
 
-        function type() {
-            const fullWord = words[i];
+        const roles = document.querySelectorAll('.hero-roles .role');
+        let idx = 0;
 
-            if (!isDeleting) {
-                currentWord = fullWord.substring(0, j + 1);
-                j++;
-            } else {
-                currentWord = fullWord.substring(0, j - 1);
-                j--;
-            }
-
-            typewriter.textContent = currentWord;
-
-            if (!isDeleting && j === fullWord.length) {
-                isDeleting = true;
-                setTimeout(type, 1500); // pauza nakon ispisivanja
-            } else if (isDeleting && j === 0) {
-                isDeleting = false;
-                i = (i + 1) % words.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-        }
-
-        type();
+        setInterval(() => {
+            roles[idx].classList.remove('active');
+            idx = (idx + 1) % roles.length;
+            roles[idx].classList.add('active');
+        }, 2500);
 
 
         const buttons = document.querySelectorAll('.btn');
