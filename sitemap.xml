@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Each URL is paired with its EN/HR alternate via xhtml:link rel="alternate" hreflang.
+  If you ever switch to a custom domain, find/replace https://lucijababic.github.io/lucija_babic_portfolio/.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/index.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/index-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/index.html"/>
+    </url>
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/index-hr.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/index.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/index-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/index.html"/>
+    </url>
+
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/about.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/about-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/about.html"/>
+    </url>
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/about-hr.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/about.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/about-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/about.html"/>
+    </url>
+
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/webprojects.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects.html"/>
+    </url>
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/webprojects-hr.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/webprojects.html"/>
+    </url>
+
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/photography.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/photography.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/photography-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/photography.html"/>
+    </url>
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/photography-hr.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/photography.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/photography-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/photography.html"/>
+    </url>
+
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/contact.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/contact-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/contact.html"/>
+    </url>
+    <url>
+        <loc>https://lucijababic.github.io/lucija_babic_portfolio/contact-hr.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://lucijababic.github.io/lucija_babic_portfolio/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="hr" href="https://lucijababic.github.io/lucija_babic_portfolio/contact-hr.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://lucijababic.github.io/lucija_babic_portfolio/contact.html"/>
+    </url>
+
+</urlset>

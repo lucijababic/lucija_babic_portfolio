@@ -1,4 +1,24 @@
-/* Globalne postavke */
+/* =============================================================
+   TABLE OF CONTENTS
+   -------------------------------------------------------------
+   1. BASE / RESET
+   2. HEADER & NAV
+   3. HAMBURGER
+   4. HERO
+   5. ABOUT
+   6. WEB PROJECTS
+   7. PHOTOGRAPHY
+   8. CONTACT
+   9. SCROLL REVEAL
+   10. FOOTER
+   11. RESPONSIVE / BREAKPOINTS
+
+   Top-level banners are wrapped with =====, subsections with ---.
+   Search for "===== NAME" to jump straight to a section.
+   ============================================================= */
+
+
+/* ===== BASE / RESET ===== */
 *,
 *::before,
 *::after {
@@ -34,13 +54,37 @@ p {
     color: #333;
 }
 
+/* --- Focus styles --- */
+:focus:not(:focus-visible) {
+    outline: none;
+}
 
-/* Header */
+:focus-visible {
+    outline: 2px solid #A61C35;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* --- Scroll progress bar --- */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: #A61C35;
+    z-index: 1000;
+    pointer-events: none;
+    transition: width 0.08s linear;
+}
+
+
+/* ===== HEADER & NAV ===== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 250px;
+    padding: 10px clamp(20px, 6vw, 250px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -53,7 +97,7 @@ header {
 
 header .logo img {
     height: 60px;
-    max-width: auto;
+    width: auto;
 }
 
 nav ul {
@@ -74,7 +118,7 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    border-bottom: 3px solid #A61C35;
+    border-bottom: 2px solid #A61C35;
     color: #A61C35;
     background-color: transparent;
     border-radius: 0;
@@ -88,10 +132,22 @@ nav ul li a:hover {
 .lang-switcher a {
     font-size: 14px;
     color: #A61C35;
+    opacity: 0.5;
     text-decoration: none;
+    transition: opacity 0.2s;
 }
 
-/* Hamburger - hidden by default on desktop */
+.lang-switcher a:hover {
+    opacity: 0.8;
+}
+
+.lang-switcher a.active {
+    border-bottom: none;
+    font-weight: 700;
+    opacity: 1;
+}
+
+/* ===== HAMBURGER (hidden on desktop, shown via media query) ===== */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -141,7 +197,7 @@ nav ul li a:hover {
     pointer-events: auto;
 }
 
-/* Hero */
+/* ===== HERO ===== */
 .hero {
     position: relative;
     width: 100%;
@@ -155,11 +211,14 @@ nav ul li a:hover {
     text-align: center;
     gap: 10px;
 
-    /* elegantni mesh gradient */
+    /* elegant mesh gradient */
     background: radial-gradient(circle at 20% 30%, #d95b72 0%, rgba(255, 255, 255, 0) 60%),
         radial-gradient(circle at 80% 70%, #a61c35 0%, rgba(255, 255, 255, 0) 70%),
         #f7f7f7;
-    overflow: hidden;
+}
+
+.hero.hero--notfound {
+    background: linear-gradient(130deg, #fff 5%, #fff0f3);
 }
 
 .hero-content {
@@ -167,17 +226,7 @@ nav ul li a:hover {
     z-index: 5;
 }
 
-/* ---------- TEXT ---------- */
-
-.hero-tag {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #333;
-    opacity: 0.85;
-    margin-bottom: 12px;
-}
+/* --- Hero text --- */
 
 .hero-title {
     letter-spacing: 1.3px;
@@ -192,7 +241,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* ---------- ROLE ANIMATION ---------- */
+/* --- Role rotator --- */
 
 .hero-roles {
     height: 76px;
@@ -273,11 +322,12 @@ nav ul li a:hover {
 .hero-photo img {
     height: 650px;
     width: auto;
+    filter: drop-shadow(0 14px 28px rgba(166, 28, 53, 0.25));
 }
 
 
 
-/* About Page */
+/* ===== ABOUT ===== */
 #about {
     display: flex;
     justify-content: space-between;
@@ -478,23 +528,6 @@ h3 i {
     vertical-align: middle;
 }
 
-.section-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.section-content div {
-    flex: 1;
-    min-width: 250px;
-}
-
-.section-content div p {
-    font-size: 15px;
-    line-height: 1.5;
-}
-
 .section-background {
     background: linear-gradient(to bottom, #f1c3c39c, #fff);
     padding: 60px 20px;
@@ -552,7 +585,7 @@ h3 i {
     color: #333;
 }
 
-/* Skills section */
+/* --- Skills --- */
 .skills-container {
     display: flex;
     gap: 20px;
@@ -580,7 +613,7 @@ h3 i {
     margin: 5px 0;
 }
 
-/* Languages section */
+/* --- Languages --- */
 .languages-container {
     display: flex;
     flex-direction: column;
@@ -609,7 +642,7 @@ h3 i {
     transition: width 1s ease-in-out;
 }
 
-/* Hobbies section */
+/* --- Hobbies --- */
 .hobbies-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -649,7 +682,7 @@ h3 i {
     color: #333;
 }
 
-/* Web Projects */
+/* ===== WEB PROJECTS ===== */
 #webprojects {
     padding: 50px 0;
     background: linear-gradient(130deg, #fff 5%, #fff0f3);
@@ -733,6 +766,7 @@ h3 i {
 
 #webprojects .project-image {
     width: 116%;
+    height: auto;
     display: block;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -819,10 +853,6 @@ h3 i {
     gap: 15px;
 }
 
-.container.vr-intro .project-media {
-    max-width: 90%;
-}
-
 #webprojects .intro.vr-intro .click-text {
     margin-top: -10px;
     text-align: center;
@@ -872,18 +902,7 @@ h3 i {
 }
 
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        font-size: 20px;
-        padding: 10px 14px;
-    }
-}
-
-
-/* Photography */
+/* ===== PHOTOGRAPHY ===== */
 #photography {
     padding: 50px 0;
     background-color: #fff;
@@ -974,7 +993,7 @@ h3 i {
 }
 
 
-/* Gallery */
+/* --- Gallery --- */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1022,7 +1041,7 @@ h3 i {
     transform: scale(1.05);
 }
 
-/* Lightbox */
+/* --- Lightbox --- */
 #lightbox {
     display: none;
     position: fixed;
@@ -1091,16 +1110,7 @@ h3 i {
     cursor: grab;
 }
 
-.glightbox-close {
-    color: white;
-    font-size: 2rem;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-}
-
-
-/* === CONTACT SECTION === */
+/* ===== CONTACT ===== */
 #contact {
     background: linear-gradient(160deg, #fff 60%, #fff0f3);
     position: relative;
@@ -1110,7 +1120,7 @@ h3 i {
     overflow: hidden;
 }
 
-/* suptilan gradient highlight animiran */
+/* --- Animated gradient highlight --- */
 #contact::before {
     content: "";
     position: absolute;
@@ -1133,7 +1143,7 @@ h3 i {
     }
 }
 
-/* animacija ulaska */
+/* --- Entrance animation --- */
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -1146,7 +1156,7 @@ h3 i {
     }
 }
 
-/* layout */
+/* --- Layout --- */
 .contact-container {
     position: relative;
     z-index: 1;
@@ -1196,7 +1206,7 @@ h3 i {
     transition: transform 0.2s, color 0.3s;
 }
 
-/* forma */
+/* --- Form --- */
 .contact-form {
     flex: 1;
     min-width: 320px;
@@ -1238,7 +1248,86 @@ h3 i {
     box-shadow: 0 0 8px rgba(166, 28, 53, 0.15);
 }
 
-.contact-form button {
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #c33;
+    background: #fff7f7;
+}
+
+.field-error {
+    color: #c33;
+    font-size: 13px;
+    margin: -10px 0 8px;
+    min-height: 18px;
+}
+
+.email-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.direct-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(166, 28, 53, 0.18);
+    text-align: left;
+}
+
+.direct-contact p {
+    margin: 0;
+    color: #444;
+    font-size: 15px;
+}
+
+.direct-contact a.email {
+    color: #A61C35;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.direct-contact a.email:hover {
+    color: #D95B72;
+}
+
+.optional-hint {
+    color: #888;
+    font-size: 0.85em;
+    font-weight: normal;
+}
+
+.copy-email-btn {
+    background: transparent;
+    border: 1px solid #A61C35;
+    color: #A61C35;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.copy-email-btn:hover {
+    background: #A61C35;
+    color: #fff;
+}
+
+.copy-email-btn.copied {
+    background: #2e7d32;
+    border-color: #2e7d32;
+    color: #fff;
+}
+
+.contact-form form button {
     background: #A61C35;
     color: #fff;
     border: none;
@@ -1251,16 +1340,16 @@ h3 i {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.contact-form button:hover {
+.contact-form form button:hover {
     background: #D95B72;
     transform: translateY(-2px);
 }
 
-/* društvene ikone */
+/* --- Social icons --- */
 .socials {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 25px;
 }
 
@@ -1295,7 +1384,7 @@ h3 i {
 }
 
 
-/* === SCROLL REVEAL ANIMACIJE === */
+/* ===== SCROLL REVEAL ===== */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -1307,7 +1396,7 @@ h3 i {
     transform: translateY(0);
 }
 
-/* === RESPONSIVE === */
+/* --- Contact responsive --- */
 @media (max-width: 1024px) {
     .contact-container {
         flex-direction: column;
@@ -1358,42 +1447,10 @@ h3 i {
 
 
 
-/* Back button */
-.back-button {
-    text-align: left;
-    margin-left: 40px;
-    position: fixed;
-    top: 100px;
-    left: 20px;
-    z-index: 200;
-}
-
-.back-button button {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    padding: 10px 20px;
-    color: white;
-    background-color: #A61C35;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.back-button button:hover {
-    background-color: #D95B72;
-    transform: scale(1.1);
-    transition: transform 0.2s, color 0.3s;
-}
-
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #f5e6e8;
+    color: #333;
     text-align: center;
     position: relative;
     width: 100%;
@@ -1402,27 +1459,70 @@ footer {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 20px 0;
+    padding: 30px 20px;
     z-index: 10;
     justify-content: space-between;
+    border-top: 1px solid rgba(166, 28, 53, 0.15);
 }
 
 footer p {
-    color: #fff;
+    color: #333;
 }
 
 footer a {
-    color: #fff;
-    text-decoration: underline;
+    color: #A61C35;
+    text-decoration: none;
     transition: color 0.3s;
     margin: 5px;
-    padding-bottom: 20px;
+    font-weight: 600;
 }
 
 footer a:hover {
-    color: #A61C35;
+    color: #D95B72;
 }
 
+footer nav a {
+    font-weight: 500;
+}
+
+/* --- Footer socials --- */
+.footer-socials {
+    display: flex;
+    gap: 22px;
+    margin: 12px 0 6px;
+}
+
+.footer-socials a {
+    color: #A61C35;
+    display: inline-flex;
+    margin: 0;
+    padding: 4px;
+    font-size: 22px;
+    transition: transform 0.2s ease, color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #D95B72;
+    transform: scale(1.15);
+    text-decoration: none;
+}
+
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+footer nav::after {
+    content: '';
+    display: block;
+    width: 350px;
+    height: 1px;
+    background: rgba(166, 28, 53, 0.18);
+    margin-top: 14px;
+}
 
 footer nav ul {
     list-style: none;
@@ -1435,9 +1535,13 @@ footer nav ul li {
     margin: 0 10px;
 }
 
+
+/* ===== RESPONSIVE / BREAKPOINTS =====
+   Global responsive overrides: 1024px, 768px, 430px.
+   Per-section breakpoints live with their section above. */
 @media (max-width: 1024px) {
 
-    /*Header i Nav*/
+    /* --- Header & Nav --- */
     header {
         padding: 10px 80px;
         flex-direction: row;
@@ -1584,9 +1688,6 @@ footer nav ul li {
         border-radius: 10px;
     }
 
-    .back-button {
-        display: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1667,11 +1768,6 @@ footer nav ul li {
         padding: 15px 30px;
     }
 
-    .back-button {
-        display: none;
-    }
-
-
     /* About */
     #about {
         display: flex;
@@ -1702,10 +1798,6 @@ footer nav ul li {
 
     .contact-me {
         margin-top: 50px;
-    }
-
-    .kontakt-zona {
-        text-align: center;
     }
 
     /* About right */
@@ -1937,6 +2029,7 @@ footer nav ul li {
 
     footer img {
         max-width: 150px;
+        height: auto;
     }
 }
 
@@ -2064,6 +2157,7 @@ footer nav ul li {
     footer img {
         padding-top: 15px;
         max-width: 100px;
+        height: auto;
     }
 }
 

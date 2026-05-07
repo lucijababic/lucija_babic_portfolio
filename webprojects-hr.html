@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#A61C35">
     <meta name="author" content="Lucija Babić">
     <meta name="keywords"
         content="Lucija Babić, portfolio, web dizajn, web develop, front-end, fotografija, projekti, kontakt">
     <meta name="description"
         content="Lucija Babić - portfolio: web dizajn, web razvoj i fotografija. Pogledajte moje radove i kontaktirajte me za suradnju.">
     <title>Lucija Babić | Web Projekti</title>
+    <link rel="alternate" hreflang="en" href="webprojects.html">
+    <link rel="alternate" hreflang="hr" href="webprojects-hr.html">
+    <link rel="alternate" hreflang="x-default" href="webprojects.html">
     <!-- Standard favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -21,10 +25,13 @@
     <link rel="icon" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
     <link rel="icon" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
@@ -35,11 +42,11 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="./images/logo horizontal.png" alt="Logo">
+                <img src="./images/logo-horizontal.webp" alt="Lucija Babić logo" width="648" height="225">
             </a>
         </div>
 
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="nav-menu">
             <span></span>
             <span></span>
             <span></span>
@@ -61,10 +68,6 @@
 
     <div id="overlay"></div>
 
-    <div class="back-button">
-        <button onclick="history.back()"><i class="fas fa-arrow-left"></i></button>
-    </div>
-
     <main>
         <section id="webprojects">
 
@@ -81,7 +84,7 @@
                     <div class="intro">
                         <a href="images/projekti/RedCap_video.mp4" class="glightbox" data-type="video">
                             <video autoplay loop muted playsinline preload="metadata"
-                                poster="images/projekti/RedCap_poster.png" class="project-image">
+                                poster="images/projekti/RedCap_poster.webp" class="project-image">
                                 <source src="images/projekti/RedCap_video.mp4" type="video/mp4">
                                 Vaš preglednik ne podržava oznaku videa.
                             </video>
@@ -120,18 +123,18 @@
                     <div class="intro vr-intro">
                         <a href="images/projekti/V&R_video.mp4" class="glightbox">
                             <video autoplay loop muted playsinline preload="metadata"
-                                poster="images/projekti/V&R_poster.png" class="project-image">
+                                poster="images/projekti/V&R_poster.webp" class="project-image">
                                 <source src="images/projekti/V&R_video.mp4" type="video/mp4">
                                 Vaš preglednik ne podržava oznaku videa.
                             </video>
                         </a>
                         <a href="#vr-fullpage" class="glightbox">
-                            <img src="images/projekti/V&R_thumbnail.png" alt="V&R Home Page" class="project-image">
+                            <img loading="lazy" src="images/projekti/V&R_thumbnail.webp" alt="Valt="V&R Home Page"R Početna" class="project-image" width="1898" height="846">
                         </a>
 
                         <div id="vr-fullpage" style="display:none;">
                             <div class="scroll-container">
-                                <img src="images/projekti/V&R_home.png" alt="V&R Home Full Page">
+                                <img loading="lazy" src="images/projekti/V&R_home.webp" alt="Valt="V&R Home Full Page"R Cijela Početna" width="1920" height="8133">
                             </div>
                         </div>
                         <p class="click-text">Kliknite za pregled cijele stranice</p>
@@ -191,22 +194,22 @@
                 <!-- Hidden scrollable containers -->
                 <div id="vr-usluge" style="display:none;">
                     <div class="scroll-container">
-                        <img src="images/projekti/V&R_usluge.png" alt="V&R Usluge">
+                        <img loading="lazy" src="images/projekti/V&R_usluge.webp" alt="V&R Usluge" width="1920" height="5698">
                     </div>
                 </div>
                 <div id="vr-dubinsko" style="display:none;">
                     <div class="scroll-container">
-                        <img src="images/projekti/V&R_dubinsko.png" alt="V&R Dubinsko">
+                        <img loading="lazy" src="images/projekti/V&R_dubinsko.webp" alt="V&R Dubinsko" width="1920" height="4887">
                     </div>
                 </div>
                 <div id="vr-onama" style="display:none;">
                     <div class="scroll-container">
-                        <img src="images/projekti/V&R_onama.png" alt="V&R O Nama">
+                        <img loading="lazy" src="images/projekti/V&R_onama.webp" alt="V&R O Nama" width="1920" height="4480">
                     </div>
                 </div>
                 <div id="vr-kontakt" style="display:none;">
                     <div class="scroll-container">
-                        <img src="images/projekti/V&R_kontakt.png" alt="V&R Kontakt">
+                        <img loading="lazy" src="images/projekti/V&R_kontakt.webp" alt="V&R Kontakt" width="1920" height="3867">
                     </div>
                 </div>
 
@@ -215,7 +218,7 @@
                     <div class="intro">
                         <a href="images/projekti/Kinetik_video.mp4" class="glightbox" data-type="video">
                             <video autoplay loop muted playsinline preload="metadata"
-                                poster="images/projekti/Kinetik_poster.png" class="project-image">
+                                poster="images/projekti/Kinetik_poster.webp" class="project-image">
                                 <source src="images/projekti/Kinetik_video.mp4" type="video/mp4">
                                 Vaš preglednik ne podržava oznaku videa.
                             </video>
@@ -258,8 +261,8 @@
 
                 <div class="container">
                     <div class="intro">
-                        <a href="images/picofportfolio.png" class="glightbox">
-                            <img src="images/picofportfolio.png" alt="Portfolio Image" class="project-image">
+                        <a href="images/picofportfolio.webp" class="glightbox">
+                            <img loading="lazy" src="images/picofportfolio.webp" alt="Slika Portfolija" class="project-image" width="1898" height="864">
                         </a>
                     </div>
                     <div class="project-info">
@@ -297,14 +300,14 @@
                     <div class="intro vr-intro">
                         <!-- Thumbnail koji otvara lightbox -->
                         <a href="#arta-fullpage" class="glightbox">
-                            <img src="images/projekti/arta-teh-thumbnail.png" alt="Arta-Teh Preview"
-                                class="project-image">
+                            <img loading="lazy" src="images/projekti/arta-teh-thumbnail.webp" alt="Arta-Teh Pregled"
+                                class="project-image" width="1305" height="858">
                         </a>
 
                         <!-- Skriveni sadržaj koji se otvara u lightboxu -->
                         <div id="arta-fullpage" style="display:none;">
                             <div class="scroll-container">
-                                <img src="images/projekti/arta-teh.png" alt="Arta-Teh Full Page">
+                                <img loading="lazy" src="images/projekti/arta-teh.webp" alt="Arta-Teh Cijela Stranica" width="1440" height="8060">
                             </div>
                         </div>
 
@@ -346,14 +349,14 @@
                     <div class="intro vr-intro">
                         <!-- Thumbnail koji otvara lightbox -->
                         <a href="#whats-fullpage" class="glightbox">
-                            <img src="images/projekti/whats-next-thumbnail.png" alt="Whats-Next Preview"
-                                class="project-image">
+                            <img loading="lazy" src="images/projekti/whats-next-thumbnail.webp" alt="Whats-Next Pregled"
+                                class="project-image" width="1316" height="818">
                         </a>
 
                         <!-- Skriveni sadržaj koji se otvara u lightboxu -->
                         <div id="whats-fullpage" style="display:none;">
                             <div class="scroll-container">
-                                <img src="images/projekti/whats-next.png" alt="Whats-Next Full Page">
+                                <img loading="lazy" src="images/projekti/whats-next.webp" alt="Whats-Next Cijela Stranica" width="1440" height="5998">
                             </div>
                         </div>
 
@@ -398,13 +401,13 @@
                     <div class="intro vr-intro">
                         <!-- Thumbnail koji otvara lightbox -->
                         <a href="#vr-fullpage" class="glightbox">
-                            <img src="images/projekti/vr-thumb.png" alt="V&R Pregled" class="project-image">
+                            <img loading="lazy" src="images/projekti/vr-thumb.webp" alt="V&R Pregled" class="project-image" width="1429" height="830">
                         </a>
 
                         <!-- Skriveni sadržaj koji se otvara u lightboxu -->
                         <div id="vr-fullpage" style="display:none;">
                             <div class="scroll-container">
-                                <img src="images/projekti/vr.png" alt="V&R Cijela Stranica">
+                                <img loading="lazy" src="images/projekti/vr.webp" alt="V&R Cijela Stranica" width="1440" height="11033">
                             </div>
                         </div>
 
@@ -447,12 +450,12 @@
             <div class="tab-content" id="promo">
                 <div class="container">
                     <div class="intro vr-intro">
-                        <a href="images/projekti/vizitka-redcap.jpg" class="glightbox">
-                            <img src="images/projekti/vizitka-redcap.jpg" alt="RedCap Vizitka"
-                                class="project-image">
+                        <a href="images/projekti/vizitka-redcap.webp" class="glightbox">
+                            <img loading="lazy" src="images/projekti/vizitka-redcap.webp" alt="RedCap Vizitka"
+                                class="project-image" width="735" height="649">
                         </a>
-                        <a href="images/projekti/redcap-bag.png" class="glightbox">
-                            <img src="images/projekti/redcap-bag.png" alt="RedCap Torba" class="project-image">
+                        <a href="images/projekti/redcap-bag.webp" class="glightbox">
+                            <img loading="lazy" src="images/projekti/redcap-bag.webp" alt="RedCap Torba" class="project-image" width="500" height="500">
                         </a>
                     </div>
                     <div class="project-info">
@@ -485,12 +488,12 @@
 
                 <div class="container">
                     <div class="intro vr-intro">
-                        <a href="images/projekti/vizitka-arta.png" class="glightbox">
-                            <img src="images/projekti/vizitka-arta.png" alt="Arta Vizitka"
-                                class="project-image">
+                        <a href="images/projekti/vizitka-arta.webp" class="glightbox">
+                            <img loading="lazy" src="images/projekti/vizitka-arta.webp" alt="Arta Vizitka"
+                                class="project-image" width="1454" height="923">
                         </a>
-                        <a href="images/projekti/arta-shirt.png" class="glightbox">
-                            <img src="images/projekti/arta-shirt.png" alt="Arta-Teh Majica" class="project-image">
+                        <a href="images/projekti/arta-shirt.webp" class="glightbox">
+                            <img loading="lazy" src="images/projekti/arta-shirt.webp" alt="Arta-Teh Majica" class="project-image" width="500" height="500">
                         </a>
                     </div>
                     <div class="project-info">
@@ -533,115 +536,90 @@
                 <li><a href="contact-hr.html">Kontakt</a></li>
             </ul>
         </nav>
-        <p>© 2025 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
-        <p>Kontaktirajte me: <a href="mailto:lucija.babic09@gmail.com">lucija.babic09@gmail.com</a></p>
-        <img src="images/logo horizontal.png" width="200px">
+        <p>© 2026 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
+        <p>Kontaktirajte me: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/lucija_babic" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/lucija-babi%C4%879/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <img src="images/logo-horizontal.webp" alt="Lucija Babić logo" width="200" loading="lazy" height="69">
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
-        const navLinks = document.querySelectorAll('nav ul li a');
-        const currentPage = window.location.pathname.split("/").pop();
+        (() => {
+            // Označi kontejnere da ih shared reveal observer (script.js) animira
+            document.querySelectorAll('.container').forEach(sec => sec.classList.add('reveal'));
 
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        const overlay = document.getElementById('overlay');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('show');
-            overlay.classList.toggle('active');
-        });
-
-        const lightbox = GLightbox({
-            selector: '.glightbox',
-            openEffect: 'fade',
-            closeEffect: 'fade',
-            touchNavigation: true,
-            loop: true,
-            height: '90vh',
-            width: '90vw',
-            moreLength: 8000
-        });
-
-        const tabs = document.querySelectorAll(".tab");
-        const contents = document.querySelectorAll(".tab-content");
-
-        function activateTab(tab) {
-            tabs.forEach(t => t.classList.remove("active"));
-            contents.forEach(c => c.classList.remove("active"));
-
-            tab.classList.add("active");
-            const target = document.getElementById(tab.dataset.target);
-            if (target) target.classList.add("active");
-        }
-
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => activateTab(tab));
-            tab.addEventListener("keydown", (e) => {
-                let idx = Array.prototype.indexOf.call(tabs, tab);
-                if (e.key === "ArrowRight") {
-                    idx = (idx + 1) % tabs.length;
-                    activateTab(tabs[idx]);
-                    tabs[idx].focus();
-                } else if (e.key === "ArrowLeft") {
-                    idx = (idx - 1 + tabs.length) % tabs.length;
-                    activateTab(tabs[idx]);
-                    tabs[idx].focus();
-                }
+            // Lightbox za slike projekata
+            GLightbox({
+                selector: '.glightbox',
+                openEffect: 'fade',
+                closeEffect: 'fade',
+                touchNavigation: true,
+                loop: true,
+                height: '90vh',
+                width: '90vw',
+                moreLength: 8000
             });
-        });
 
-        const backTopBtn = document.getElementById("backToTop");
+            // Tabovi (s navigacijom strelicama)
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 500) {
-                backTopBtn.classList.add("show");
-            } else {
-                backTopBtn.classList.remove("show");
+            function activateTab(tab) {
+                tabs.forEach(t => t.classList.remove("active"));
+                contents.forEach(c => c.classList.remove("active"));
+                tab.classList.add("active");
+                const target = document.getElementById(tab.dataset.target);
+                if (target) target.classList.add("active");
             }
-        });
 
-        backTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.container');
-
-            sections.forEach(sec => sec.classList.add('reveal'));
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        obs.unobserve(entry.target);
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => activateTab(tab));
+                tab.addEventListener("keydown", (e) => {
+                    let idx = Array.prototype.indexOf.call(tabs, tab);
+                    if (e.key === "ArrowRight") {
+                        idx = (idx + 1) % tabs.length;
+                        activateTab(tabs[idx]);
+                        tabs[idx].focus();
+                    } else if (e.key === "ArrowLeft") {
+                        idx = (idx - 1 + tabs.length) % tabs.length;
+                        activateTab(tabs[idx]);
+                        tabs[idx].focus();
                     }
                 });
-            }, { threshold: 0.1 });
-
-            sections.forEach(sec => observer.observe(sec));
-        });
-
-        document.querySelectorAll('.toggle-more').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const fullList = btn.nextElementSibling;
-                if (fullList.style.display === "none") {
-                    fullList.style.display = "block";
-                    btn.textContent = "Sakrij";
-                } else {
-                    fullList.style.display = "none";
-                    btn.textContent = "Vidi više";
-                }
             });
-        });
 
+            // Back-to-top dugme
+            const backTopBtn = document.getElementById("backToTop");
+            if (backTopBtn) {
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 500) {
+                        backTopBtn.classList.add("show");
+                    } else {
+                        backTopBtn.classList.remove("show");
+                    }
+                });
+                backTopBtn.addEventListener("click", () => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+
+            // Vidi više / Sakrij toggle
+            document.querySelectorAll('.toggle-more').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const fullList = btn.nextElementSibling;
+                    if (fullList.style.display === "none") {
+                        fullList.style.display = "block";
+                        btn.textContent = "Sakrij";
+                    } else {
+                        fullList.style.display = "none";
+                        btn.textContent = "Vidi više";
+                    }
+                });
+            });
+        })();
     </script>
 
 
