@@ -1419,6 +1419,11 @@ h3 i {
         padding: 80px 8%;
     }
 
+    .direct-contact {
+        align-items: center;
+        text-align: center;
+    }
+
     .contact-form {
         padding: 35px;
         align-items: center;
@@ -2028,7 +2033,7 @@ footer nav ul li {
     }
 
     footer img {
-        max-width: 150px;
+        max-width: 200px;
         height: auto;
     }
 }
@@ -2151,12 +2156,12 @@ footer nav ul li {
     }
 
     footer p {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     footer img {
         padding-top: 15px;
-        max-width: 100px;
+        max-width: 160px;
         height: auto;
     }
 }
