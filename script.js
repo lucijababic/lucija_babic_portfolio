@@ -155,8 +155,13 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 })();
 
-// Reveal-on-scroll: any element with .reveal gets .active when in view
+// Reveal-on-scroll: any element with .reveal gets .active when in view.
+// Also auto-marks section-backgrounds (about) and webprojects containers so
+// each page doesn't need to repeat the same wiring in its inline script.
 (() => {
+    document.querySelectorAll('section.section-background, #webprojects .container')
+        .forEach(el => el.classList.add('reveal'));
+
     const reveals = document.querySelectorAll('.reveal');
     if (reveals.length === 0) return;
 
@@ -170,4 +175,33 @@ document.querySelectorAll('.btn').forEach(btn => {
     }, { threshold: 0.1 });
 
     reveals.forEach(el => observer.observe(el));
+})();
+
+// Toggle-more buttons — handles both markup patterns:
+//   • about: button is inside a .timeline-item; toggling .expanded reveals .short-text + .full-list via CSS
+//   • webprojects: button is followed by a sibling .full-list that we show/hide directly
+// Labels follow document.documentElement.lang. ARIA expanded state stays in sync.
+(() => {
+    const isHr = document.documentElement.lang === 'hr';
+    const labelMore = isHr ? 'Vidi više' : 'See more';
+    const labelLess = isHr ? 'Sakrij' : 'Close';
+
+    document.querySelectorAll('.toggle-more').forEach(btn => {
+        const timelineItem = btn.closest('.timeline-item');
+        btn.setAttribute('aria-expanded', 'false');
+
+        btn.addEventListener('click', () => {
+            let expanded;
+            if (timelineItem) {
+                expanded = timelineItem.classList.toggle('expanded');
+            } else {
+                const fullList = btn.nextElementSibling;
+                if (!fullList) return;
+                expanded = !fullList.style.display || fullList.style.display === 'none';
+                fullList.style.display = expanded ? 'block' : 'none';
+            }
+            btn.textContent = expanded ? labelLess : labelMore;
+            btn.setAttribute('aria-expanded', String(expanded));
+        });
+    });
 })();

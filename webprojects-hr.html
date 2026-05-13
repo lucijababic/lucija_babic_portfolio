@@ -186,10 +186,10 @@
                 </div>
 
                 <!-- Full page links -->
-                <a href="#vr-usluge" class="glightbox hidden-link" data-gallery="vr-pages"></a>
-                <a href="#vr-dubinsko" class="glightbox hidden-link" data-gallery="vr-pages"></a>
-                <a href="#vr-onama" class="glightbox hidden-link" data-gallery="vr-pages"></a>
-                <a href="#vr-kontakt" class="glightbox hidden-link" data-gallery="vr-pages"></a>
+                <a href="#vr-usluge" class="glightbox" data-gallery="vr-pages"></a>
+                <a href="#vr-dubinsko" class="glightbox" data-gallery="vr-pages"></a>
+                <a href="#vr-onama" class="glightbox" data-gallery="vr-pages"></a>
+                <a href="#vr-kontakt" class="glightbox" data-gallery="vr-pages"></a>
 
                 <!-- Hidden scrollable containers -->
                 <div id="vr-usluge" style="display:none;">
@@ -400,12 +400,12 @@
                 <div class="container">
                     <div class="intro vr-intro">
                         <!-- Thumbnail koji otvara lightbox -->
-                        <a href="#vr-fullpage" class="glightbox">
+                        <a href="#vr-fullpage-design" class="glightbox">
                             <img loading="lazy" src="images/projekti/vr-thumb.webp" alt="V&R Pregled" class="project-image" width="1429" height="830">
                         </a>
 
                         <!-- Skriveni sadržaj koji se otvara u lightboxu -->
-                        <div id="vr-fullpage" style="display:none;">
+                        <div id="vr-fullpage-design" style="display:none;">
                             <div class="scroll-container">
                                 <img loading="lazy" src="images/projekti/vr.webp" alt="V&R Cijela Stranica" width="1440" height="11033">
                             </div>
@@ -536,21 +536,18 @@
                 <li><a href="contact-hr.html">Kontakt</a></li>
             </ul>
         </nav>
-        <p>© 2026 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
-        <p>Kontaktirajte me: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
+        <p>Email: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
         <div class="footer-socials">
             <a href="https://www.instagram.com/lucija_babic" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/lucija-babi%C4%879/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
         <img src="images/logo-horizontal.webp" alt="Lucija Babić logo" width="200" loading="lazy" height="69">
+        <p>© 2026 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
         (() => {
-            // Označi kontejnere da ih shared reveal observer (script.js) animira
-            document.querySelectorAll('.container').forEach(sec => sec.classList.add('reveal'));
-
             // Lightbox za slike projekata
             GLightbox({
                 selector: '.glightbox',
@@ -591,34 +588,19 @@
                 });
             });
 
-            // Back-to-top dugme
+            // Back-to-top — IntersectionObserver na 500px sentinelu (umjesto scroll listenera)
             const backTopBtn = document.getElementById("backToTop");
             if (backTopBtn) {
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 500) {
-                        backTopBtn.classList.add("show");
-                    } else {
-                        backTopBtn.classList.remove("show");
-                    }
-                });
+                const sentinel = document.createElement('div');
+                sentinel.style.cssText = 'position:absolute;top:500px;left:0;width:1px;height:1px;pointer-events:none';
+                document.body.appendChild(sentinel);
+                new IntersectionObserver(([entry]) => {
+                    backTopBtn.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+                }, { threshold: 0 }).observe(sentinel);
                 backTopBtn.addEventListener("click", () => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
             }
-
-            // Vidi više / Sakrij toggle
-            document.querySelectorAll('.toggle-more').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const fullList = btn.nextElementSibling;
-                    if (fullList.style.display === "none") {
-                        fullList.style.display = "block";
-                        btn.textContent = "Sakrij";
-                    } else {
-                        fullList.style.display = "none";
-                        btn.textContent = "Vidi više";
-                    }
-                });
-            });
         })();
     </script>
 

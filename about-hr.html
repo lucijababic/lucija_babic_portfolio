@@ -69,7 +69,7 @@
     <section id="about">
         <div class="about-container">
             <div class="about-left">
-                <h1 class="Pozdrav">Bok!</h1>
+                <h1>Bok!</h1>
                 <p>Ja sam <b>Lucija Babić</b>, završila sam studij informatike na
                     <b>Fakultetu informatike i digitalnih tehnologija u Rijeci.</b>
                 </p>
@@ -284,19 +284,19 @@
                     <div class="language-item">
                         <p>Engleski</p>
                         <div class="progress-bar">
-                            <div class="progress" data-width="90%"></div>
+                            <div class="progress" style="width: 90%;"></div>
                         </div>
                     </div>
                     <div class="language-item">
                         <p>Španjolski</p>
                         <div class="progress-bar">
-                            <div class="progress" data-width="40%"></div>
+                            <div class="progress" style="width: 50%;"></div>
                         </div>
                     </div>
                     <div class="language-item">
                         <p>Talijanski</p>
                         <div class="progress-bar">
-                            <div class="progress" data-width="30%"></div>
+                            <div class="progress" style="width: 30%;"></div>
                         </div>
                     </div>
                 </div>
@@ -345,43 +345,14 @@
                 <li><a href="contact-hr.html">Kontakt</a></li>
             </ul>
         </nav>
-        <p>© 2026 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
-        <p>Kontaktirajte me: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
+        <p>Email: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
         <div class="footer-socials">
             <a href="https://www.instagram.com/lucija_babic" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/lucija-babi%C4%879/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
         <img src="images/logo-horizontal.webp" alt="Lucija Babić logo" width="200" loading="lazy" height="69">
+        <p>© 2026 Lucija Babić | Sva prava pridržana | Izrada web sjedišta: Lucija Babić</p>
     </footer>
-
-    <script>
-        (() => {
-            // Označi sekcije da ih shared reveal observer (script.js) animira pri scrollu
-            document.querySelectorAll('section.section-background').forEach(sec => sec.classList.add('reveal'));
-
-            // Animacija progress barova pri scrollu
-            const progressBars = document.querySelectorAll('.progress');
-            window.addEventListener('scroll', () => {
-                progressBars.forEach(bar => {
-                    const rect = bar.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        bar.style.width = bar.dataset.width;
-                    }
-                });
-            });
-
-            // Vidi više / Sakrij toggle — otkriva kratak tekst + listu zajedno
-            document.querySelectorAll('.toggle-more').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const item = btn.closest('.timeline-item');
-                    if (!item) return;
-                    const isExpanded = item.classList.toggle('expanded');
-                    btn.textContent = isExpanded ? "Sakrij" : "Vidi više";
-                });
-            });
-        })();
-    </script>
-
 
 </body>
 

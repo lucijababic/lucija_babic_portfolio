@@ -35,7 +35,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="photography-page">
     <header>
         <div class="logo">
             <a href="index.html">
@@ -209,11 +209,11 @@
             </div>
         </div>
         <div id="lightbox">
-            <span class="close">&times;</span>
+            <button type="button" class="close" aria-label="Close">&times;</button>
             <img id="lightbox-image" src="" alt="Expanded View">
             <video id="lightbox-video" controls playsinline preload="metadata"></video>
-            <span class="prev">&#10094;</span>
-            <span class="next">&#10095;</span>
+            <button type="button" class="prev" aria-label="Previous">&#10094;</button>
+            <button type="button" class="next" aria-label="Next">&#10095;</button>
         </div>
     </main>
 
@@ -227,13 +227,13 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <p>© 2026 Lucija Babić | All Rights Reserved | Website Development: Lucija Babić</p>
-        <p>Contact me: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
+        <p>Email: <a class="email" href="#" data-u="lucija.babic09" data-d="gmail.com">email</a></p>
         <div class="footer-socials">
             <a href="https://www.instagram.com/lucija_babic" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/lucija-babi%C4%879/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
         <img src="images/logo-horizontal.webp" alt="Lucija Babić logo" width="200" loading="lazy" height="69">
+        <p>© 2026 Lucija Babić | All Rights Reserved | Website Development: Lucija Babić</p>
     </footer>
 
     <script>
@@ -247,17 +247,12 @@
             if (!lightbox) return;
 
             // Jedinstvena lista svih medija u DOM redoslijedu (slike + videi)
-            const items = [];
-            document.querySelectorAll('.lightbox-img, .lightbox-video').forEach(el => {
-                if (el.classList.contains('lightbox-img')) {
-                    items.push({ type: 'image', src: el.dataset.large });
-                } else {
-                    items.push({ type: 'video', src: el.dataset.video });
-                }
-            });
-            if (items.length === 0) return;
+            const triggers = document.querySelectorAll('.lightbox-img, .lightbox-video');
+            if (triggers.length === 0) return;
 
+            const items = [];
             let currentIndex = 0;
+            let previouslyFocused = null;
 
             function stopVideo() {
                 lightboxVideo.pause();
@@ -281,33 +276,39 @@
                 }
             }
 
+            function focusable() {
+                const items = [closeBtn, prevBtn, nextBtn];
+                if (lightbox.classList.contains('video-mode')) items.push(lightboxVideo);
+                return items;
+            }
+
+            function openLightbox(idx) {
+                previouslyFocused = document.activeElement;
+                currentIndex = idx;
+                lightbox.style.display = 'flex';
+                showItem(idx);
+                closeBtn.focus();
+            }
+
             function closeLightbox() {
                 lightbox.style.display = 'none';
                 if (lightbox.classList.contains('video-mode')) {
                     stopVideo();
                     lightbox.classList.remove('video-mode');
                 }
+                if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+                    previouslyFocused.focus();
+                }
             }
 
-            // Otvaranje lightboxa
-            document.querySelectorAll('.lightbox-img, .lightbox-video').forEach((el, index) => {
-                el.addEventListener('click', () => {
-                    currentIndex = index;
-                    lightbox.style.display = 'flex';
-                    showItem(index);
-                });
+            triggers.forEach((el, index) => {
+                const isImg = el.classList.contains('lightbox-img');
+                items.push(isImg
+                    ? { type: 'image', src: el.dataset.large }
+                    : { type: 'video', src: el.dataset.video });
+                el.addEventListener('click', () => openLightbox(index));
             });
 
-            closeBtn.addEventListener('click', closeLightbox);
-
-            // Zatvaranje klikom izvan slike/videa
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightboxImage || e.target === lightboxVideo) return;
-                if (e.target.classList.contains('prev') || e.target.classList.contains('next')) return;
-                closeLightbox();
-            });
-
-            // Prethodna / sljedeća (kroz sve medije)
             function showPrev() {
                 currentIndex = (currentIndex - 1 + items.length) % items.length;
                 showItem(currentIndex);
@@ -316,25 +317,47 @@
                 currentIndex = (currentIndex + 1) % items.length;
                 showItem(currentIndex);
             }
+            closeBtn.addEventListener('click', closeLightbox);
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
             nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-            // Klik lijevo/desno po cijeloj strani (samo za slike, da ne ometa video kontrole)
+            // Jedan klik handler na lightbox: klik na sliku ili lijevo/desno = prev/next (za slike),
+            // klik na video ili kontrole — ignoriraj, klik bilo gdje drugdje — zatvori.
             lightbox.addEventListener('click', (e) => {
-                if (lightbox.style.display !== 'flex') return;
-                if (lightbox.classList.contains('video-mode')) return;
-                const x = e.clientX;
-                const width = lightbox.clientWidth;
-                if (x < width / 2) showPrev();
-                else if (x > width / 2) showNext();
+                if (e.target === lightboxVideo) return;
+                if (lightbox.classList.contains('video-mode')) {
+                    if (e.target === lightbox) closeLightbox();
+                    return;
+                }
+                if (e.target === lightboxImage || e.target === lightbox) {
+                    const x = e.clientX;
+                    const width = lightbox.clientWidth;
+                    if (x < width / 2) showPrev();
+                    else showNext();
+                    return;
+                }
+                closeLightbox();
             });
 
-            // Tipke na tipkovnici
+            // Tipke na tipkovnici — uključuje focus trap (Tab cikla unutar lightboxa)
             document.addEventListener('keydown', (e) => {
                 if (lightbox.style.display !== 'flex') return;
-                if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') showPrev();
-                if (e.key === 'ArrowRight') showNext();
+                if (e.key === 'Escape') { closeLightbox(); return; }
+                if (e.key === 'ArrowLeft') { showPrev(); return; }
+                if (e.key === 'ArrowRight') { showNext(); return; }
+                if (e.key === 'Tab') {
+                    const items = focusable();
+                    if (items.length === 0) return;
+                    const first = items[0];
+                    const last = items[items.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
             });
 
             // Swipe za mobilne uređaje (samo za slike)
