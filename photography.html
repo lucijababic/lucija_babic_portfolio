@@ -188,22 +188,22 @@
                 <div class="category">
                     <h2>Videos</h2>
                     <div class="gallery">
-                        <video controls poster="images/dron_videi/4_poster.webp" preload="none">
-                            <source src="./images/dron_videi/4.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video controls poster="images/dron_videi/2_poster.webp" preload="none">
-                            <source src="./images/dron_videi/2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video controls poster="images/dron_videi/3_poster.webp" preload="none">
-                            <source src="./images/dron_videi/3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video controls poster="images/dron_videi/1_poster.webp" preload="none">
-                            <source src="./images/dron_videi/1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <button type="button" class="video-thumb lightbox-video" data-video="./images/dron_videi/4.mp4" aria-label="Play drone video 1">
+                            <img src="images/dron_videi/4_poster.webp" loading="lazy" alt="Drone Video 1" width="1800" height="1012">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                        <button type="button" class="video-thumb lightbox-video" data-video="./images/dron_videi/2.mp4" aria-label="Play drone video 2">
+                            <img src="images/dron_videi/2_poster.webp" loading="lazy" alt="Drone Video 2" width="1800" height="1012">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                        <button type="button" class="video-thumb lightbox-video" data-video="./images/dron_videi/3.mp4" aria-label="Play drone video 3">
+                            <img src="images/dron_videi/3_poster.webp" loading="lazy" alt="Drone Video 3" width="1800" height="1012">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                        <button type="button" class="video-thumb lightbox-video" data-video="./images/dron_videi/1.mp4" aria-label="Play drone video 4">
+                            <img src="images/dron_videi/1_poster.webp" loading="lazy" alt="Drone Video 4" width="1800" height="1012">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -211,6 +211,7 @@
         <div id="lightbox">
             <span class="close">&times;</span>
             <img id="lightbox-image" src="" alt="Expanded View">
+            <video id="lightbox-video" controls playsinline preload="metadata"></video>
             <span class="prev">&#10094;</span>
             <span class="next">&#10095;</span>
         </div>
@@ -239,49 +240,89 @@
         (() => {
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxVideo = document.getElementById('lightbox-video');
             const closeBtn = document.querySelector('#lightbox .close');
-            const images = document.querySelectorAll('.lightbox-img');
             const prevBtn = document.querySelector('#lightbox .prev');
             const nextBtn = document.querySelector('#lightbox .next');
-            if (!lightbox || images.length === 0) return;
+            if (!lightbox) return;
+
+            // Jedinstvena lista svih medija u DOM redoslijedu (slike + videi)
+            const items = [];
+            document.querySelectorAll('.lightbox-img, .lightbox-video').forEach(el => {
+                if (el.classList.contains('lightbox-img')) {
+                    items.push({ type: 'image', src: el.dataset.large });
+                } else {
+                    items.push({ type: 'video', src: el.dataset.video });
+                }
+            });
+            if (items.length === 0) return;
 
             let currentIndex = 0;
 
+            function stopVideo() {
+                lightboxVideo.pause();
+                lightboxVideo.removeAttribute('src');
+                lightboxVideo.load();
+            }
+
+            function showItem(idx) {
+                const item = items[idx];
+                if (item.type === 'image') {
+                    if (lightbox.classList.contains('video-mode')) {
+                        stopVideo();
+                        lightbox.classList.remove('video-mode');
+                    }
+                    lightboxImage.src = item.src;
+                } else {
+                    lightbox.classList.add('video-mode');
+                    lightboxVideo.pause();
+                    lightboxVideo.src = item.src;
+                    lightboxVideo.play().catch(() => {});
+                }
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+                if (lightbox.classList.contains('video-mode')) {
+                    stopVideo();
+                    lightbox.classList.remove('video-mode');
+                }
+            }
+
             // Otvaranje lightboxa
-            images.forEach((img, index) => {
-                img.addEventListener('click', () => {
+            document.querySelectorAll('.lightbox-img, .lightbox-video').forEach((el, index) => {
+                el.addEventListener('click', () => {
                     currentIndex = index;
                     lightbox.style.display = 'flex';
-                    lightboxImage.src = img.dataset.large;
+                    showItem(index);
                 });
             });
 
-            // Zatvaranje lightboxa
-            closeBtn.addEventListener('click', () => {
-                lightbox.style.display = 'none';
-            });
+            closeBtn.addEventListener('click', closeLightbox);
 
-            // Zatvaranje klikom izvan slike
+            // Zatvaranje klikom izvan slike/videa
             lightbox.addEventListener('click', (e) => {
-                if (e.target !== lightboxImage && !e.target.classList.contains('prev') && !e.target.classList.contains('next')) {
-                    lightbox.style.display = 'none';
-                }
+                if (e.target === lightboxImage || e.target === lightboxVideo) return;
+                if (e.target.classList.contains('prev') || e.target.classList.contains('next')) return;
+                closeLightbox();
             });
 
-            // Prethodna / sljedeća slika preko dugmadi
+            // Prethodna / sljedeća (kroz sve medije)
             function showPrev() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                lightboxImage.src = images[currentIndex].dataset.large;
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showItem(currentIndex);
             }
             function showNext() {
-                currentIndex = (currentIndex + 1) % images.length;
-                lightboxImage.src = images[currentIndex].dataset.large;
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
             }
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
             nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-            // Klik lijevo/desno po cijeloj strani
+            // Klik lijevo/desno po cijeloj strani (samo za slike, da ne ometa video kontrole)
             lightbox.addEventListener('click', (e) => {
+                if (lightbox.style.display !== 'flex') return;
+                if (lightbox.classList.contains('video-mode')) return;
                 const x = e.clientX;
                 const width = lightbox.clientWidth;
                 if (x < width / 2) showPrev();
@@ -290,14 +331,13 @@
 
             // Tipke na tipkovnici
             document.addEventListener('keydown', (e) => {
-                if (lightbox.style.display === 'flex') {
-                    if (e.key === 'ArrowLeft') showPrev();
-                    if (e.key === 'ArrowRight') showNext();
-                    if (e.key === 'Escape') closeBtn.click();
-                }
+                if (lightbox.style.display !== 'flex') return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
             });
 
-            // Swipe za mobilne uređaje
+            // Swipe za mobilne uređaje (samo za slike)
             let startX = 0;
             lightboxImage.addEventListener('touchstart', e => {
                 startX = e.touches[0].clientX;

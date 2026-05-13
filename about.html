@@ -179,7 +179,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">See more</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Development and structuring of new pages and categories</li>
                             <li>Analysis and adjustment of text readability on websites</li>
                             <li>Collaboration on developing consistent and clear content</li>
@@ -203,7 +203,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">See more</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Creation of promotional visual materials (Canva, CapCut)</li>
                             <li>Collaboration on web design concepts in Figma</li>
                             <li>Contribution to visual identity through logo design</li>
@@ -225,7 +225,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">See more</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Worked in WordPress and Canva, creating and updating web elements</li>
                             <li>Maintained website functionality and user experience</li>
                             <li>Imported and optimized products and descriptions</li>
@@ -370,17 +370,13 @@
                 });
             });
 
-            // Toggle "See more" / "Close" lists
+            // Toggle "See more" / "Close" — reveal short-text + full-list together
             document.querySelectorAll('.toggle-more').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const fullList = btn.nextElementSibling;
-                    if (fullList.style.display === "none") {
-                        fullList.style.display = "block";
-                        btn.textContent = "Close";
-                    } else {
-                        fullList.style.display = "none";
-                        btn.textContent = "See more";
-                    }
+                    const item = btn.closest('.timeline-item');
+                    if (!item) return;
+                    const isExpanded = item.classList.toggle('expanded');
+                    btn.textContent = isExpanded ? "Close" : "See more";
                 });
             });
         })();

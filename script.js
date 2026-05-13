@@ -27,6 +27,7 @@
         hamburger.classList.add('active');
         navMenu.classList.add('show');
         if (overlay) overlay.classList.add('active');
+        document.body.classList.add('menu-open');
         hamburger.setAttribute('aria-expanded', 'true');
         hamburger.setAttribute('aria-label', labelClose);
         const first = focusable()[0];
@@ -37,6 +38,7 @@
         hamburger.classList.remove('active');
         navMenu.classList.remove('show');
         if (overlay) overlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.setAttribute('aria-label', labelOpen);
         hamburger.focus();

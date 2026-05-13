@@ -176,7 +176,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">Vidi više</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Izrada i strukturiranje novih stranica i kategorija</li>
                             <li>Analiza i prilagodba čitljivosti teksta na web stranicama</li>
                             <li>Suradnja na razvoju dosljednog i jednostavnog sadržaja</li>
@@ -202,7 +202,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">Vidi više</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Izrada vizualnih materijala za promociju (Canva, CapCut)</li>
                             <li>Suradnja na web dizajn konceptima u Figmi</li>
                             <li>Doprinos vizualnom identitetu kroz logotipe</li>
@@ -225,7 +225,7 @@
                         </p>
                         <br>
                         <button class="toggle-more">Vidi više</button>
-                        <ul class="full-list" style="display:none;">
+                        <ul class="full-list">
                             <li>Rad u WordPressu i Canvi, izrada i ažuriranje web elemenata</li>
                             <li>Održavanje funkcionalnosti i korisničkog iskustva</li>
                             <li>Uvoz i optimizacija proizvoda i opisa</li>
@@ -370,17 +370,13 @@
                 });
             });
 
-            // Vidi više / Sakrij toggle
+            // Vidi više / Sakrij toggle — otkriva kratak tekst + listu zajedno
             document.querySelectorAll('.toggle-more').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const fullList = btn.nextElementSibling;
-                    if (fullList.style.display === "none") {
-                        fullList.style.display = "block";
-                        btn.textContent = "Sakrij";
-                    } else {
-                        fullList.style.display = "none";
-                        btn.textContent = "Vidi više";
-                    }
+                    const item = btn.closest('.timeline-item');
+                    if (!item) return;
+                    const isExpanded = item.classList.toggle('expanded');
+                    btn.textContent = isExpanded ? "Sakrij" : "Vidi više";
                 });
             });
         })();
